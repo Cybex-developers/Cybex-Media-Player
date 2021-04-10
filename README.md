@@ -1,2 +1,2 @@
-# Cybex-Media-Player.github.io
+# Cybex-Media-Player
 Best Media Player
