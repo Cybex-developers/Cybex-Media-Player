@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            background-color: #161616;
+            text-align: center;
+            font-family: Arial;
+            color: White;
+        }
+        h3{
+            position: relative;
+            top: 15px;
+            width: max-content;
+            left: 160px;
+        }
+        input[type="text"]{
+            background-color: Black;
+            border: none;
+            box-shadow: 0px 0px 5px  Cyan;
+            height: 25px;
+            width: 600px;
+            font-size: 18px;
+            font-family: Courier;
+            outline: none;
+            color: #ccc;
+            position: relative;
+            top: -30px;
+            left: 0px;
+        }
+        #Experience{
+            background-color: Black;
+            border: none;
+            height: 150px;
+            box-shadow: 0px 0px 5px  Cyan;
+            width: 600px;
+            font-family: Courier;
+            font-size: 18px;
+            outline: none;
+            color: #ccc;
+            position: relative;
+            top: -30px;
+            left: 0px;
+            resize: none;
+        }
+        #Send{
+            width: 200px;
+            height: 60px;
+            border: 2px solid black;
+            background-color: blueviolet;
+            font-size: 24px;
+            position: absolute;
+            color: White;
+            outline: none;
+            top: 500px;
+            left: 580px;
+        }
+        #Note{
+            color: Red;
+            position: fixed;
+            top:420px;
+            left: 380px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cybex Media Player (Contact Us)</h1>
+    <h3>Enter your Fullname :</h3><input type="text" id="Name" placeholder="Cybex Dev">
+    <h3>Enter your experience :</h3><textarea id="Experience" placeholder="My Expreience was . . ."></textarea>
+    <h3>Enter your Review :</h3><input type="text" id="Review" placeholder="As per my opinion, it is . . .">
+    <h4 id="Note">Note : Anyone can see your name,review and experience</h4>
+    <button id="Send" onclick="Senddet()">Send Details</button>
+    <script>
+        function Senddet() {
+            var id = document.getElementById("Name").value;
+            var review = document.getElementById("Review").value;
+            var exp = document.getElementById("Experience").value;
+            let data = id + " Reviewed " + review + " and his experience was " + exp;
+
+        }
+    </script>
+</body>
+</html>
