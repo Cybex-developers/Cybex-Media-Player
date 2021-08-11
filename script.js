@@ -13,7 +13,7 @@ function Download(){
         des.style.boxShadow = "0px 0px 10px Blue";
     }
     GoDownload();
-}
+};
 function GoHome(){window.location.href = "./index";}
 function GoConPage(){window.location.href = "./Contact";}
 function GoDownload(){window.location.href = "./Cybex Media Player 2021.7.1 Setup.exe";}
