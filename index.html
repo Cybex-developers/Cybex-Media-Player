@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybex Media Player</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <script>
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var element = document.getElementById('text');
+        if (isMobile) {
+            window.location.href = "./mobile/index.html"
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        #Container p{
+            text-align: left;
+            position: absolute;
+            left: 50%;
+            top: 80px;
+        }
+        #Container img{
+            position: absolute;
+            left: 1%;
+            top: 40px;
+            width: 650px;
+            height: 448px;
+        }
+        #Version{
+            position: absolute;
+            left: 63%;
+            top: 46%;
+        }
+        #Compatibility{
+            position: absolute;
+            left: 50%;
+            top: 35%;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="./index.js"></script>
+    
+    <p id="Heading">Cybex Media Player</p>
+    <img src="./favicon.ico" style="width: 32px;height: 32px;">
+    <div id="Menu">
+        <button id="Home" onclick="GoHome()">Home</button>
+        <button id="Docs" onclick="ReadDocs()">Docs</button>
+        <button id="Download" onclick="GoDownload()">Download</button>
+        <button id="About" style="width: 120px;" onclick="GoConPage()">Contact Us</button>
+    </div>
+    <div id="Container">
+        <img src="images/snapshot.png">
+        
+        <p>This Media Player is one of the best media player in this world with a free price.<br>
+            You can enjoy a great set of tools with a media player and image viewer. <br>
+            Earlier it's Beta but now it is stable, Thanks for your support for making it stable.<br>
+            We upvotes the work of Cybex Studio's developer #Dev_Kapoor.
+        </p>
+        <h3 id="Compatibility">Tested on Windows 7 2009 <br> Download for Windows XP / Vista / 7 / 8 / 8.1 / 10</h3>
+        <h2 id="Version">v2021.1</h2>
+    
+        <a style="left: 15.5%;" onclick="ReadDocs()">Read the Docs</a> 
+        <a href="AboutUs.html" style="left: 16%;">Contact Us</a>
+        <p style="top: 93%;left: 57%;"> Copyright (c) Cybex Studios 2021</p>
+        <button onclick="Download()" id="downnow">Download Now</button>
+    </div>
+    
+</body>
+</html>

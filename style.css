@@ -1,0 +1,69 @@
+body{
+    background: url("https://www.teahub.io/photos/full/323-3238123_mountain-scenery-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+#Menu{
+    width: 100%;
+    height: 7%;
+    position: absolute;
+    top:0%;
+    background-color: #0004;
+    left: 0%;
+}
+#Menu button{
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    color: #fff;
+    width:7%;
+    top: 0px;
+    height: 46px;
+    outline: none;
+}
+#Menu button:hover{background: #0005;}
+#Menu button:focus,button::after{
+    color:Cyan;
+    background: #0006;
+}
+#Heading{
+    font-size: 18px;
+    font-family: Arial;
+    position: absolute;
+    top: -4px;
+    left: 4%;
+}
+::selection{
+    background: none;
+}
+#Container{
+    font-family: Arial;
+    text-align: center;
+    width: 100%;
+    height: 605px;
+    position: absolute;
+    left: 0px;
+    top:52px;
+}
+#Container a{text-decoration: none;color: orange; position: relative;top: 75%;cursor: pointer;}
+#Container button{
+    width: 200px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    background-color: Blue;
+    font-size: 24px;
+    position: absolute;
+    color: #fff;
+    border-radius: 12px;
+    outline: none;
+    top: 340px;
+    left: 800px;
+    transition: 1s;
+}
+#Container button:hover{background: #04f;}
+#Container button:active{background: #08f;}

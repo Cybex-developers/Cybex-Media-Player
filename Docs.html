@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            color: #eee;
+            background: #080808;
+            overflow: hidden;
+        }
+        #options{
+            height: 90%;
+            background: #111;
+            width: 170px;
+            border-right: 20px solid #111;
+            font-family: "Tahoma";
+            font-size: 16px;
+            text-align: right;
+            position: absolute;
+            top: 10%;
+            left: 0%;
+        }
+        #options div{
+            width: 170px;
+            cursor: pointer;
+            text-decoration: none;
+            border-top: 10px solid #111;
+            border-bottom: 10px solid #111;
+            height: 20px;
+        }
+        #options div:hover{
+            background: #000;
+            border-right: 20px solid #000;
+            border-top: 10px solid #000;
+            border-bottom: 10px solid #000;
+        }
+        #data{
+            border-left: 2px solid Gray;
+            border-top: 1px solid #808080;
+            width: 1175px;
+            height: 90%;
+            position: absolute;
+            top: 10%;
+            left: 190px;
+            font-size: 20px;
+            font-family: "Calibri";
+        }
+        #data *{
+            margin-left: 10px;
+        }
+        #selected{
+            background: Cyan;
+            box-shadow: 10px 0px 10px Cyan;
+            height: 40px;
+            width: 10px;
+            position: absolute;
+            top: 126px;
+            left: 0;
+        }
+        #backToHome p{
+            font-size: 30px;
+            position: absolute;
+            top: -12px;
+            left: 60px;
+            color: #ddd;
+            font-weight: lighter;
+            font-family: 'Arial';
+        }
+        #backToHome img{
+            cursor: pointer;
+            width: 48px;
+            position: absolute;
+            top: 15px;
+        }
+        #data hr{
+            width: 1100px;
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="backToHome"><img src="./images/back.png" alt="" onclick="GoBack()"><p>Back to Home</p></div>
+    <div id="options">
+        <h3>Table of Contents</h3>
+        <div id="option0">Installation</div>
+        <div id="option1">Description</div>
+        <div id="option2">Image Viewer</div>
+        <div id="option3">Audio Player</div>
+        <div id="option4">Video Player</div>
+        <div id="option5">Other Features</div>
+        <div id="option6">customization</div>
+        <div id="option7">License</div>
+        <div id="option8">About Us</div>
+    </div>
+    <div id="data">
+        <div id="installation">
+            <h2>System Requirements</h2>
+            <p>Windows 7,8,8.1,10.</p>
+            <p>Google Chrome 59 or later</p><hr>
+            <h2>Installation </h2>
+            <p>1. Download the<a href="./Cybex Media Player 1.2.5 Setup.exe" style="color: Gold">Cybex-Media-Player</a> installer for Windows.</p>
+            <p>2. Once it is downloaded, run the installer (Cybex Media Player {version} Setup.exe). This will only take a few seconds.</p>
+            <p>3. By default, Cybex Media Player is installed under C:\Program Files\Cybex Media Player.</p>
+            <hr>
+        </div>
+    </div>
+    <div id="selected"></div>
+    <p style="position: absolute;left: 47%;bottom: -1px">Copyright (c) Cybex Studios 2021</p>
+</body>
+<script>
+    function GoBack() {
+        window.location.replace("./index.html")
+    }
+</script>
+</html>
