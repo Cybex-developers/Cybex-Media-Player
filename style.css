@@ -1,11 +1,15 @@
 body{
-    background: #161616;
+    background: url("https://wallpaperaccess.com/full/2149488.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
 }
 #Menu{
     width: 100%;
-    height: 7%;
+    height: 6.9999%;
     position: absolute;
     top:0%;
+    background-color: #0003;
     left: 0%;
 }
 #Menu button{
@@ -13,22 +17,19 @@ body{
     background: none;
     border: none;
     cursor: pointer;
-    color: White;
-    text-shadow: 0px 0px 10px Black;
     position: relative;
     left: 50%;
+    color: #fff;
     width:7%;
-    top: 0%;
-    height: 50px;
+    top: 0px;
+    height: 46px;
     outline: none;
 }
+#Menu button:hover{background: #0002;}
 #Menu button:focus,button::after{
-    color:Cyan;
-    background: Black;
-    border-bottom: 4px solid Cyan;
+    background: #0004;
 }
 #Heading{
-    color: White;
     font-size: 18px;
     font-family: Arial;
     position: absolute;
@@ -39,14 +40,12 @@ body{
     background: none;
 }
 #Container{
-    color:White;
     font-family: Arial;
     text-align: center;
     width: 100%;
-    height: 600px;
+    height: 605px;
     position: absolute;
     left: 0px;
-    background-color: #111111;
     top:52px;
 }
 #Container a{text-decoration: none;color: orange; position: relative;top: 75%;cursor: pointer;}
@@ -58,10 +57,12 @@ body{
     background-color: Blue;
     font-size: 24px;
     position: absolute;
-    box-shadow: 0px 0px 10px Cyan;
-    color: White;
+    color: #fff;
+    border-radius: 12px;
     outline: none;
     top: 340px;
     left: 800px;
-    transition: 2s;
+    transition: 1s;
 }
+#Container button:hover{background: #04f;}
+#Container button:active{background: #08f;}
