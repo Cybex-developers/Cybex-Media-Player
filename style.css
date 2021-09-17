@@ -1,5 +1,5 @@
 body{
-    background: url("https://www.teahub.io/photos/full/323-3238123_mountain-scenery-hd.jpg");
+    background: url("https://wallpaperaccess.com/full/2149488.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
@@ -9,7 +9,7 @@ body{
     height: 6.9999%;
     position: absolute;
     top:0%;
-    background-color: #0004;
+    background-color: #fff2;
     left: 0%;
 }
 #Menu button{
@@ -25,10 +25,9 @@ body{
     height: 46px;
     outline: none;
 }
-#Menu button:hover{background: #0005;}
+#Menu button:hover{background: #0002;}
 #Menu button:focus,button::after{
-    color:Cyan;
-    background: #0006;
+    background: #0004;
 }
 #Heading{
     font-size: 18px;
