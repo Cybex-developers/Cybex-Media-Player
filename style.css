@@ -9,7 +9,7 @@ body{
     height: 6.9999%;
     position: absolute;
     top:0%;
-    background-color: #0003;
+    background-color: #0001;
     left: 0%;
 }
 #Menu button{
@@ -49,7 +49,7 @@ body{
     top:52px;
 }
 #Container a{text-decoration: none;color: orange; position: relative;top: 75%;cursor: pointer;}
-#Container button{
+#Container #downnow{
     width: 200px;
     height: 60px;
     border: none;
@@ -61,8 +61,36 @@ body{
     border-radius: 12px;
     outline: none;
     top: 340px;
-    left: 800px;
+    left: 690px;
     transition: 1s;
 }
-#Container button:hover{background: #04f;}
-#Container button:active{background: #08f;}
+#Container #downnow:hover{background: #04f;}
+#Container #downnow:active{background: #08f;}
+
+#Container #launchnow{
+    width: 200px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff4500;
+    font-size: 24px;
+    position: absolute;
+    color: #fff;
+    border-radius: 12px;
+    outline: none;
+    top: 340px;
+    left: 920px;
+    transition: 1s;
+}
+#Container #launchnow:hover{background: #ff2500;}
+#Container #launchnow:active{background: #ff0500;}
+.message{
+    position: absolute;
+    bottom: 20px;
+    font-size: 18px;
+    color: Black;
+    background: #fff6;
+    padding: 5px;
+    padding-left: 15px;padding-right: 15px;
+    border-radius: 5px;
+}
