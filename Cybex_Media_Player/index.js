@@ -27,7 +27,7 @@ function ShowMenu (id,grid){
         elem.style.display = "none";
     }
 }
-window.resizeTo(650, 450);let happening = false;
+let happening = false;
 setTimeout(function () {
     CloseMessage()
 }, 5000)
