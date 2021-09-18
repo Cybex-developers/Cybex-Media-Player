@@ -45,6 +45,38 @@
             top: -4px;
             left: 10px;
         }
+        #container{
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            width: 100%;
+            height: 93%;
+            align-content: center;
+            justify-content: center;
+        }
+        #container *{display: table;margin: 0 auto;position: relative;}
+        #name,#review{
+            top: 10px;
+            padding: 5px;
+            padding-right: 20px;padding-left: 20px;
+            width: 500px;
+            background: #0004;
+            border-radius: 5px;
+            overflow-y: scroll;
+            font-family: Arial;
+            font-size: 18px;
+            border: 1px solid #0f8;
+            outline: none;
+            color: #fff;
+        }
+        #name::placeholder,#review::placeholder{color: #ddd;}
+        #name:focus,#review:focus{box-shadow: 0 0 3px Cyan;}
+        .nameLabel{
+            top: 38px;
+            left: -370px;
+            font-size: 18px;
+            font-family: Arial;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +89,12 @@
         <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
     </div>
     <div id="container">
-
+        <form onsubmit="return false">
+            <label for="name" class="nameLabel">Enter your Full Name:</label>
+            <input type="text" placeholder="Enter your Full Name" id="name" autocomplete="off"/>
+            <label for="name" class="nameLabel" style="left: -360px;">Enter your Review:</label>
+            <textarea type="text" placeholder="Enter your Review" id="review" autocomplete="off" style="height: 300px"></textarea>
+        </form>
     </div>
 </body>
 <script>
