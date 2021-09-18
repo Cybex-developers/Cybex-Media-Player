@@ -1,0 +1,17 @@
+body{
+    background: url("https://images.hdqwalls.com/download/best-nature-image-360x640.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial;
+}
+#header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff4;
+    width: auto;
+}
+#header *{position: absolute;}
+#info{
+    text-align: center;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Cybex Media Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="jquery.min.js"></script>
+    <script src="cybex-web2exe.js"></script>
+</head>
+<body id="body">
+<div id="loading" style="z-index: 1">
+    <h1 style="top: 50px;left: 180px;color: #c34cfe">Cybex Media Player</h1>
+    <h4 style="top: 110px;left: 20px">The Media Player with best features is here developed by a really new company.</h4>
+    <div id="loader" style="top: 210px;left: 5%;width: 90%;height: 20px;background: linear-gradient(to right,Blue,Cyan)">
+        <div id="loader-fill"></div>
+    </div>
+    <h1 style="bottom: 70px;left: 260px">v2021.1</h1>
+    <h2 style="color: Gold;bottom: 20px;left: 240px">Cybex Studios</h2>
+</div>
+<div id="show-container">
+    <video id="video-container" style="background-size: cover;display: none">
+        <source id="vid-source">
+    </video>
+    <audio id="audio-container" style="display: none">
+        <source id="aud-source">
+    </audio>
+    <div id="img-container">
+        <img src="welcome.png" id="image-main">
+    </div>
+    <input type="file" id="video-finder" style="display: none" accept="image/*" onchange="change.video()">
+</div>
+<div id="controls">
+    <div id="controls-auvid" style="display:none;">
+        <button id="slow-forward" onclick="SlowForward()">&#x23ea;</button>
+        <button id="play-pause">||</button>
+        <button id="fast-forward" onclick="FastForward()">&#9193</button>
+        <span id="videoTime" style="font-size: 22px;color: #eee">0:00/0:00</span>
+        <input type="range" id="videoPoint" value="0" min="0" onchange="ReTime()" onmousedown="removeBug1.startr()" onmouseup="removeBug1.leave()">
+        <button id="volume" style="color: Gold" onclick="ChangeVolume()">🔊</button>
+        <input type="range" id="volume-range" max="100" value="100" onchange="ApplyVolume()" onmouseup="DisShow()">
+        <div id="volume-value" style="display: none"><span class="arrow"></span>100%</div>
+    </div>
+    <div id="controls-img" style="display: block" class="div-img">
+        <a onclick="ImgMenus.showFiltersMenu()">Filters/Effects</a>
+        <a onclick="AvailableSoon()">Crop</a>
+        <a onclick="showRotatePopup()">Rotate</a>
+        <a onclick="ImgMenus.showZoomOptionsMenu()">Zoom Options</a>
+        <a onclick="AvailableSoon()">Convert to:</a>
+        <a onclick="AvailableSoon()">Save</a>
+    </div>
+    <button class="moreIoptions" onclick="ShowMenu('more_options','do')">⋮</button>
+    <div id="more_options">
+        <a onclick="more_options.Exit()">Exit</a>
+        <a onclick="more_options.Reload()">Restart</a><hr>
+        <a onclick="video.src = null">Close File</a><hr>
+        <a>Settings</a>
+        <a>Go To Folder</a>
+        <a id="FormatName">Format : "."</a><hr>
+        <a onclick="more_options.vifw()">View Image from Web</a><hr>
+        <a onclick="more_options.ViewImage()">View Image</a>
+        <a onclick="more_options.ListenAudio()">Listen Audio</a>
+        <a onclick="more_options.PlayVideo()">Watch Video</a><hr>
+        <a onclick="more_options.CloseMenu()">Close Menu</a>
+    </div>
+    <div id="img-menus">
+        <div id="filters" style="height: 240px;bottom: 38px">
+            <a onclick="showFilters(this.innerHTML)">Blur-point</a>    
+            <a onclick="showFilters(this.innerHTML)">Brightness</a><hr>
+            <a onclick="showFilters(this.innerHTML)">Contrast</a>      
+            <a onclick="showFilters(this.innerHTML)">Grayness</a><hr>  
+            <a onclick="showFilters(this.innerHTML)">Hue-rotation</a>  
+            <a onclick="showFilters(this.innerHTML)">Invert</a><hr>    
+            <a onclick="showFilters(this.innerHTML)">Opacity</a>       
+            <a onclick="showFilters(this.innerHTML)">Saturate</a><hr>  
+            <a onclick="showFilters(this.innerHTML)">Sepia</a>         
+        </div>
+        <div id="zoom-options" style="text-align: center;bottom: 31px;height: 140px;left: 270px;width: 150px">
+            <a onclick="ZoomOptions.PixelToPixel()">Pixel to Pixel</a>
+            <a onclick="ZoomOptions.FitTheArea()">Fit the Area</a><hr style="width: 142px">
+            <a onclick="ZoomOptions.ZoomIn()">Zoom In:</a>
+            <input type="number" max="1000" min="1" value="100" id="zoom" oninput="ZoomOptions.ZoomNum()"><span>%</span>
+            <a onclick="ZoomOptions.ZoomOut()">Zoom Out:</a>
+        </div>
+        <div id="convert-types" style="width: 260px;left: 360px">
+            <a>.png (Portable Network Graphics)</a><hr style="width: 252px">
+            <a>.jpg (Standard Camera Image)</a><hr style="width: 252px">
+            <a>.pdf (Portable Document Format)</a><hr style="width: 252px">
+            <a>.ico (Icon Image)</a><hr style="width: 252px">
+            <a>.gif (Graphics Interface Format)</a><hr style="width: 252px">
+            <a>.bmp (Bitmap Image)</a><hr style="width: 252px">
+            <a>.webp (Web Picture)</a>
+        </div>
+    </div>
+    <div id="img-url-popup" style="display: none">
+        <h3 style="width: 400px;text-align: center">Enter Web URL or 'data:' for Images</h3>
+        <input type="text" id="popup" style="width: 350px;cursor: text">
+        <button onclick="ViewWebImg()">Go</button>
+    </div>
+    <div id="img-popups">
+        <div id="filters-popup" style="width: 408px;display: none;">
+            <h2 style="top: -15px;left: 5px;">Filters:</h2>
+            <select id="filter-type" onchange="filterify()">
+                <option>Blur-point</option>
+                <option selected>Brightness</option>
+                <option>Contrast</option>
+                <option>Grayness</option>
+                <option>Hue-rotation</option>
+                <option>Invert</option>
+                <option>Opacity</option>
+                <option>Saturate</option>
+                <option>Sepia</option>
+            </select>
+            <button id="filter-apply" onclick="ApplyFilter()">Apply</button>
+            <h2 style="top:25px;left: 5px;">Strength:</h2>
+            <input type="range" id="filter-strength" onchange="filterP(1)"  min="0" max="1000" value="100">
+            <input type="number" id="filter-power" min="0" max="1000" value="100" oninput="filterP(2)"><span id='fpp'>%</span>
+        </div>
+        <div id="rotate-popup" style="width: 408px;display: none;">
+            <h2 style="left: 5px;width: calc(100% - 5px);text-align: center;">Rotation:</h2>
+            <a style="margin-left: 14%;" onclick="RotateSuggest(90)">90deg</a>
+            <a onclick="RotateSuggest(180)">180deg</a>
+            <a onclick="RotateSuggest(270)">270deg</a>
+            <a onclick="RotateSuggest(360)">Normal</a>
+            <input type="number" placeholder="Enter rotation in degree" min="0" max="360" id="rot-deg" onkeydown="FixBug4()">
+            <button onclick="Rotate()">Rotate</button>
+        </div>
+    </div>
+</div>
+<div class="alert info">
+    <span class="closebtn" onclick="CloseMessage()">&times;</span>Welcome User.
+</div>
+</body>
+<script src="index.js"></script>
+</html>
