@@ -6,11 +6,44 @@
     <title>Page Not Found</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <style>
-      body{
-        background: url("https://wallpaperaccess.com/full/2149488.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+             body{
+            background: url("https://wallpaperaccess.com/full/2149488.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+       } 
+       #Menu{
+            width: 100%;
+            height: 6.9999%;
+            position: absolute;
+            top:0%;
+            background-color: #0001;
+            left: 0%;
+        }
+        #Menu button{
+            font-size: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            left: 50%;
+            color: #fff;
+            width:7%;
+            top: 0px;
+            height: 46px;
+            outline: none;
+        }
+        #Menu button:hover{background: #0002;}
+        #Menu button:focus,button::after{
+            background: #0004;
+        }
+        #Heading{
+            font-size: 18px;
+            font-family: Arial;
+            position: absolute;
+            top: -4px;
+            left: 10px;
+        }
       #Error_404{
         background: transparent;
         position: absolute;
@@ -31,13 +64,20 @@
     </style>
   </head>
   <body>
+    <p id="Heading">Cybex Media Player</p>
+    <div id="Menu">
+        <button id="Home" onclick="GoHome()">Home</button>
+        <button id="Docs" onclick="ReadDocs()">Docs</button>
+        <button id="Download" onclick="GoDownload()">Download</button>
+        <button id="Contact" style="width: 120px;" onclick="GoConPage()">Contact Us</button>
+        <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
+    </div>
     <div id="Error_404">
       <h1>Cybex Media Player</h1>
       <img src="./favicon.ico" alt="" ><br>
       <h1>404 Error</h1>
       <h1>Page Not Found</h1>
       <p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
-      <a href="https://cybex-developers.github.io/Cybex-Media-Player/" style="color:White">Go to Home</a>
     </div>
   </body>
 </html>
