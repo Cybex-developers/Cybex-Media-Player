@@ -12,6 +12,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             color: #fff;
+            overflow: hidden;
        } 
        #Menu{
             width: 100%;
@@ -45,6 +46,66 @@
             top: -4px;
             left: 10px;
         }
+        #container{
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            height: 93%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .card{
+            height: 480px;
+            margin-right: 25px;
+            border-radius: 5px;
+            margin-left: 25px;
+            padding: 10px;
+            width: 280px;
+            box-shadow: 0 0 3px White;
+            background: #0008;
+            position: relative;
+            text-align: center;
+            font-family: Arial;
+        }
+        .card hr{
+            position: relative;
+            width: 270px;
+            background: #0f8;
+            border: none;
+            height: 1px;
+        }
+        .whatNew{
+            text-align: left;
+            overflow-y: scroll;
+            height: 150px;
+        }
+        .whatNew::-webkit-scrollbar{-webkit-appearance: none;}
+        .whatNew::-webkit-scrollbar-thumb{
+            -webkit-appearance: none;
+            width: 10px;
+            background: #0006;
+        }
+        .whatNew::-webkit-scrollbar-thumb:hover{background: #0008;}
+        .whatNew::-webkit-scrollbar-thumb:active{background: #000a;}
+        .versions{
+            text-align: left;
+            overflow-y: scroll;
+            height: 100px;
+        }
+        .versions::-webkit-scrollbar{-webkit-appearance: none;}
+        .versions::-webkit-scrollbar-thumb{
+            -webkit-appearance: none;
+            width: 10px;
+            background: #0006;
+        }
+        .versions::-webkit-scrollbar-thumb:hover{background: #0008;}
+        .versions::-webkit-scrollbar-thumb:active{background: #000a;}
+        .versions a{color: #0af;}
+        .versions a:hover{color: #0cf;}
+        .versions a:active{color: #0ff;}
     </style>
 </head>
 <body>
@@ -57,6 +118,21 @@
         <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
     </div>
     <div id="container">
+        <div class="card">
+            <h1>v2021.1</h1><hr>
+            <h3 style="text-align: left;">Downloads :-</h3>
+            <p class="versions">
+                <a href="#">v2021.1.1</a><br><br>
+                <a href="#">v2021.1.2</a><br><br>
+            </p><hr>
+            <h3 style="text-align: left;">What's there :-</h3>
+            <p class="whatNew">
+                1. New Application <br><br>
+                2. Variety of features <br><br>
+                3. Great User Interface <br><br>
+                4. Almost no Bugs or crashes <br>
+            </p>
+        </div>
 
     </div>
 </body>

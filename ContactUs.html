@@ -47,15 +47,15 @@
         }
         #container{
             position: absolute;
-            top: 7%;
+            top: 10%;
             left: 0%;
             width: 100%;
-            height: 93%;
+            height: 90%;
             align-content: center;
             justify-content: center;
         }
         #container *{display: table;margin: 0 auto;position: relative;}
-        #name,#review{
+        #name,#review,#e-mail{
             top: 10px;
             padding: 5px;
             padding-right: 20px;padding-left: 20px;
@@ -69,14 +69,30 @@
             outline: none;
             color: #fff;
         }
-        #name::placeholder,#review::placeholder{color: #ddd;}
-        #name:focus,#review:focus{box-shadow: 0 0 3px Cyan;}
+        #name::placeholder,#review::placeholder,#e-mail::placeholder{color: #ddd;}
+        #name:focus,#review:focus,#e-mail:focus{box-shadow: 0 0 3px Cyan;}
         .nameLabel{
             top: 38px;
             left: -370px;
             font-size: 18px;
             font-family: Arial;
         }
+        #submit{
+            width: 300px;
+            height: 60px;
+            border: none;
+            cursor: pointer;
+            background-color: Red;
+            font-size: 24px;
+            color: #fff;
+            border-radius: 12px;
+            outline: none;
+            
+            transition: 1s;
+        }
+        #submit:hover{background: #f20;box-shadow: 0 0 5px White;}
+        #submit:active{background: #f40;box-shadow: 0 0 10px White;}
+        #e-mail option{background: Gold;color: Black;}
     </style>
 </head>
 <body>
@@ -90,11 +106,24 @@
     </div>
     <div id="container">
         <form onsubmit="return false">
-            <label for="name" class="nameLabel">Enter your Full Name:</label>
+            <p class="nameLabel" style="left: -375px;">What's your use with it:</p>
+            <select id="e-mail" style="width: 540px;">
+                <option disabled selected style="color: Gray;">Choose your Use with it</option>
+                <option>General</option>
+                <option>Personal</option>
+                <option>Editing</option>
+                <option>School</option>
+                <option>College</option>
+                <option>Proffesional</option>
+                <option>Others</option>
+            </select>
+            <label for="name" class="nameLabel" required>Enter your Full Name:</label>
             <input type="text" placeholder="Enter your Full Name" id="name" autocomplete="off"/>
             <label for="name" class="nameLabel" style="left: -360px;">Enter your Review:</label>
-            <textarea type="text" placeholder="Enter your Review" id="review" autocomplete="off" style="height: 300px"></textarea>
+            <textarea type="text" placeholder="Enter your Review" id="review" autocomplete="off" style="height: 200px"></textarea>
+            <br><br><button type="submit" id="submit">Submit Your Review</button>
         </form>
+        <br><p style="font-family: Arial;font-size: 20px;bottom: -50px;text-shadow: 0 0 5px Black;">Copyright (c) Cybex Studios 2021 </p>
     </div>
 </body>
 <script>
