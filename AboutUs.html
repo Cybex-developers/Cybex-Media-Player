@@ -45,6 +45,42 @@
             top: -4px;
             left: 10px;
         }
+        #container{
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            height: 93%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .card{
+            height: 500px;
+            margin-right: 25px;
+            border-radius: 5px;
+            margin-left: 25px;
+            padding: 10px;
+            width: 280px;
+            box-shadow: 0 0 3px White;
+            background: #0008;
+            position: relative;
+            text-align: center;
+            font-family: Arial;
+        }
+        .card hr{
+            position: relative;
+            width: 270px;
+            background: #0f8;
+            border: none;
+            height: 1px;
+        }
+        .card img{
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +93,16 @@
         <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
     </div>
     <div id="container">
-
+        <div class="card">
+            <h1>Dev Kapoor</h1>
+            <img src="./images/camera.png">
+            <hr>
+            I'm here to provide you with a great application.I'm able to do this only of the efforts of my teachers.
+            Currently I'm the only developer here but no one knows what will happen in future.I will try my best to
+            provide you with more great applications.
+            <hr>
+            <h2>CEO and Founder</h2>
+        </div>
     </div>
 </body>
 <script>
