@@ -4,117 +4,197 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docs</title>
+    <title>Documentation</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
-        body{
-            color: #eee;
-            background: #080808;
-            overflow: hidden;
-        }
-        #options{
-            height: 90%;
-            background: #111;
-            width: 170px;
-            border-right: 20px solid #111;
-            font-family: "Tahoma";
-            font-size: 16px;
-            text-align: right;
+       body{
+            background: url("https://wallpaperaccess.com/full/2149488.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+       } 
+       #Menu{
+            width: 100%;
+            height: 6.9999%;
             position: absolute;
-            top: 10%;
+            top:0%;
+            background-color: #0001;
             left: 0%;
         }
-        #options div{
-            width: 170px;
+        #Menu button{
+            font-size: 18px;
+            background: none;
+            border: none;
             cursor: pointer;
-            text-decoration: none;
-            border-top: 10px solid #111;
-            border-bottom: 10px solid #111;
-            height: 20px;
+            position: relative;
+            left: 50%;
+            color: #fff;
+            width:7%;
+            top: 0px;
+            height: 46px;
+            outline: none;
         }
-        #options div:hover{
-            background: #000;
-            border-right: 20px solid #000;
-            border-top: 10px solid #000;
-            border-bottom: 10px solid #000;
+        #Menu button:hover{background: #0002;}
+        #Menu button:focus,button::after{
+            background: #0004;
         }
-        #data{
-            border-left: 2px solid Gray;
-            border-top: 1px solid #808080;
-            width: 1175px;
-            height: 90%;
+        #Heading{
+            font-size: 18px;
+            font-family: Arial;
             position: absolute;
-            top: 10%;
-            left: 190px;
+            top: -4px;
+            left: 10px;
+        }
+        .container{
+            position: absolute;
+            top: 8%;
+            height: 91%;
+            width: 98%;
+            border-radius: 5px;
+            left: 1%;
+            box-shadow: 0 0 10px Gold;
+        }
+        .sideMenu{
+            position: absolute;
+            height: 100%;
+            width: 210px;
+            background: #222;
+            border-right: solid 2px Black;
+            color: White;
+            text-align: center;
+            font-family: Arial;
+            border-radius: 5px 0 0 5px;
             font-size: 20px;
-            font-family: "Calibri";
+            max-width: 100%;
         }
-        #data *{
-            margin-left: 10px;
-        }
-        #selected{
-            background: Cyan;
-            box-shadow: 10px 0px 10px Cyan;
-            height: 40px;
-            width: 10px;
-            position: absolute;
-            top: 126px;
-            left: 0;
-        }
-        #backToHome p{
-            font-size: 30px;
-            position: absolute;
-            top: -12px;
-            left: 60px;
-            color: #ddd;
-            font-weight: lighter;
-            font-family: 'Arial';
-        }
-        #backToHome img{
+        .sideMenu p{
+            text-align: left;
+            padding-left: 25px;
             cursor: pointer;
-            width: 48px;
+            margin: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background: #222;
+            transition: 1s;
+        }
+        .sideMenu p:hover{background: #111;}
+        .sideMenu p:active{background: #000;}
+        #search{
+            border: 1px solid Cyan;
+            outline: none;
+            color: #fff;
+            background: #222;
+            font-size: 16px;
+            width: 150px;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #search:focus{box-shadow: 0 0 5px Cyan;}
+        .data{
             position: absolute;
-            top: 15px;
+            height: 100%;
+            left: 205px;
+            width: calc(100% - 255px);
+            background: #eee;
+            color: White;
+            padding-left: 50px;
+            color: #111;
+            text-align: left;
+            font-family: Arial;
+            border-radius: 0 5px 5px 0 ;
+            font-size: 18px;
+            font-family: Franklin Gothic;
+            overflow: scroll;
+            font-weight: 300;
         }
-        #data hr{
-            width: 1100px;
-            background: lightgray;
+        .data::-webkit-scrollbar{-webkit-appearance: none;}
+        .data::-webkit-scrollbar-corner{-webkit-appearance: none;}
+        .data::-webkit-scrollbar-thumb{
+            -webkit-appearance: none;
+            width: 5px;
+            background: #333;
         }
+        .data hr{
+            width: calc(100% - 230px);
+            position: absolute;
+            left: 30px;
+        }
+        .data *{margin: 0;opacity: 1;}
+        .data h1{margin-top: 10px;margin-bottom: 30px;text-decoration: underline #80f;}
+        .data h2{margin-left: 30px}
+        .data span{margin-left: 60px;margin-bottom: 10px;}
     </style>
 </head>
 <body>
-
-    <div id="backToHome"><img src="./images/back.png" alt="" onclick="GoBack()"><p>Back to Home</p></div>
-    <div id="options">
-        <h3>Table of Contents</h3>
-        <div id="option0">Installation</div>
-        <div id="option1">Description</div>
-        <div id="option2">Image Viewer</div>
-        <div id="option3">Audio Player</div>
-        <div id="option4">Video Player</div>
-        <div id="option5">Other Features</div>
-        <div id="option6">customization</div>
-        <div id="option7">License</div>
-        <div id="option8">About Us</div>
+    <p id="Heading">Cybex Media Player</p>
+    <div id="Menu">
+        <button id="Home" onclick="GoHome()">Home</button>
+        <button id="Docs" onclick="ReadDocs()">Docs</button>
+        <button id="Download" onclick="GoDownload()">Download</button>
+        <button id="Contact" style="width: 120px;" onclick="GoConPage()">Contact Us</button>
+        <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
     </div>
-    <div id="data">
-        <div id="installation">
-            <h2>System Requirements</h2>
-            <p>Windows 7,8,8.1,10.</p>
-            <p>Google Chrome 59 or later</p><hr>
-            <h2>Installation </h2>
-            <p>1. Download the<a href="./Cybex Media Player 1.2.5 Setup.exe" style="color: Gold">Cybex-Media-Player</a> installer for Windows.</p>
-            <p>2. Once it is downloaded, run the installer (Cybex Media Player {version} Setup.exe). This will only take a few seconds.</p>
-            <p>3. By default, Cybex Media Player is installed under C:\Program Files\Cybex Media Player.</p>
-            <hr>
+    <div class="container">
+        <div class="sideMenu">
+            <input type="text" id="search"><span style="font-size: 16px;cursor: pointer;"> 🔎</span>
+            <br><br><p>Installation</p>
+            <p onclick="Display('launching')">Launching</p>
+            <p>Image Viewer</p>
+            <p>Audio Listener</p>
+            <p>Video Player</p>
+        </div>
+        <div class="data">
+            <div id="installation">
+                <h1>Installation</h1>
+                <div>
+                    <h2>System Requirements</h2><br>
+                    <span>Windows 7,8,8.1,10</span><br>
+                    <span>.Net Framework version 4.5.1</span><br>
+                    <span>Google Chrome 59 or later</span>
+                </div><br>
+                <div>
+                    <h2>Instructions</h2><br>
+                    <span>Download the <a href="./Cybex Media Player 2021.1 Setup.exe">Cybex Media Player Installer</a>.</span><br>
+                    <span>Run the installer.</span><br>
+                    <span>The installer will guide yout through the installtion of the software.</span><br>
+                    <span>If you face any error while installation please tell us in contact us form.</span>
+                </div>
+            </div>
+            <div id="launching">
+                <h1>Launching</h1>
+                <div>
+                    <h2>Way 1</h2><br>
+                    <span>Go to <a href="https://cybex-developers.github.io/Cybex-Media-Player">
+                        https://cybex-developers.github.io/Cybex-Media-Player</a></span><br>
+                    <span>Click on Launch now button.</span>
+                </div><br>
+                <div>
+                    <h2>Way 2</h2><br>
+                    <span><a href="#" onclick="Launch()">Simply click it</a></span><br>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="selected"></div>
-    <p style="position: absolute;left: 47%;bottom: -1px">Copyright (c) Cybex Studios 2021</p>
 </body>
 <script>
-    function GoBack() {
-        window.location.replace("./index.html")
+    function GoHome(){window.location.href = "./";}
+    function GoConPage(){window.location.href = "./ContactUs";}
+    function GoDownload(){window.location.href = "./Downloads";}
+    function GoAboutPage(){window.location.href = "./AboutUs";}
+    function ReadDocs(){window.location.href = "./Docs";}
+    function Display(elem) {
+        document.getElementById('installation').style.display = "none";
+        document.getElementById('launching').style.display = "none";
+        document.getElementById(elem).style.display = "block"
     }
+    function Launch() {
+        app=window.open("./Cybex_Media_Player","Cybex Media Player","height=450,width=650");
+        if (window.focus) {app.focus()}
+        return false;
+    }
+    window.onload = Display('installation');
 </script>
 </html>
