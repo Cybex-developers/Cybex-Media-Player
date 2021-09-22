@@ -64,7 +64,7 @@
             text-align: center;
             font-family: Arial;
             border-radius: 5px 0 0 5px;
-            font-size: 20px;
+            font-size: 18px;
             max-width: 100%;
         }
         .sideMenu p{
@@ -72,10 +72,10 @@
             padding-left: 25px;
             cursor: pointer;
             margin: 0;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding-top: 8px;
+            padding-bottom: 8px;
             background: #222;
-            transition: 1s;
+            margin-bottom: 5px;
         }
         .sideMenu p:hover{background: #111;}
         .sideMenu p:active{background: #000;}
@@ -114,18 +114,25 @@
         .data::-webkit-scrollbar-corner{-webkit-appearance: none;}
         .data::-webkit-scrollbar-thumb{
             -webkit-appearance: none;
-            width: 5px;
-            background: #333;
+            border-radius: 25px;
+            width: 3px;
+            background: #ccc;
         }
+        .data::-webkit-scrollbar-thumb:hover{background: #bbb;}
+        .data::-webkit-scrollbar-thumb:active{background: #aaa;}
         .data hr{
             width: calc(100% - 230px);
             position: absolute;
             left: 30px;
         }
         .data *{margin: 0;opacity: 1;}
-        .data h1{margin-top: 10px;margin-bottom: 30px;text-decoration: underline #80f;}
+        .data h1{margin-top: 30px;margin-bottom: 30px;text-decoration: underline #80f;}
         .data h2{margin-left: 30px}
         .data span{margin-left: 60px;margin-bottom: 10px;}
+        .link{color: #00f;cursor: pointer;text-decoration: underline;}
+        .link:active{color: #f00;}
+        .link::selection{cursor: not-allowed;}
+        br::selection{color: transparent;}
     </style>
 </head>
 <body>
@@ -140,11 +147,15 @@
     <div class="container">
         <div class="sideMenu">
             <input type="text" id="search"><span style="font-size: 16px;cursor: pointer;"> 🔎</span>
-            <br><br><p>Installation</p>
+            <br><br><p onclick="Display('installation')">Installation</p>
             <p onclick="Display('launching')">Launching</p>
-            <p>Image Viewer</p>
-            <p>Audio Listener</p>
-            <p>Video Player</p>
+            <p onclick="Display('image-viewer')">Image Viewer</p>
+            <p onclick="Display('audio-listener')">Audio Listener</p>
+            <p onclick="Display('video-player')">Video Player</p>
+            <p>Upcoming Features</p>
+            <p onclick="Display('license')">License</p>
+            <p onclick="Display('op-license')">3rd party Licenses</p>
+            <p>About Us</p>
         </div>
         <div class="data">
             <div id="installation">
@@ -173,8 +184,69 @@
                 </div><br>
                 <div>
                     <h2>Way 2</h2><br>
-                    <span><a href="#" onclick="Launch()">Simply click it</a></span><br>
+                    <span style="margin-left: 0px;"><span class='link' onclick="Launch()">Simply click it</span></span><br>
                 </div>
+            </div>
+            <div id="image-viewer">
+                <h1>Image Viewer</h1>
+                <div>
+                    <h2>Supported File types</h2><br>
+                    <span>It currently supports jpeg, gif, png, apng, svg, bmp, bmp ico, png ico.</span><br>
+                </div><br>
+                <div>
+                    <h2>Editing Filters</h2><br>
+                    <span>You can apply the following filters to your image and you can adjust their values too.</span>
+                    <br><br><div style="margin-left: 50px;">
+                        <span>1. Brightness</span><br>
+                        <span>2. Contrast</span><br>
+                        <span>3. Blur-point</span><br>
+                        <span>4. Grayness</span><br>
+                        <span>5. Hue-rotation</span><br>
+                        <span>6. Invert</span><br>
+                        <span>7. Opacity</span><br>
+                        <span>8. Saturate</span><br>
+                        <span>9. Sepia</span><br>
+                    </div>
+                </div><br>
+                <div>
+                    <h2>Rotating Image</h2><br>
+                    <span>You can also rotate your image to any degree you want.</span><br>
+                    <span>It provides some suggestion degrees of 90°, 180°, 270° and 360°</span><br>
+                </div><br>
+                <div>
+                    <h2>Zoom Options:</h2><br>
+                    <span>You can adjust the zoom level of your image</span><br>
+                    <span>By default it is fixed to normal</span><br>
+                    <span>You can also fit the image according to the size of viewer window.</span><br>
+                </div><br><br><br>
+            </div>
+            <div id="audio-listener">
+                
+            </div>
+            <div id="video-player">
+                
+            </div>
+            <div id="license">
+                <h1>License</h1>
+                <div style="margin-left: 30px;max-width: 800px;">
+                    Copyright (c) 2021 Cybex Studios <br><br>
+                    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+                    documentation files (the "Software"), to deal in the Software without restriction, including without 
+                    limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+                    Software, and to permit persons to whom the Software is furnished to do so, subject to the following 
+                    conditions: <br><br>
+
+                    The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+                    of the Software.
+
+                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
+                    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+                    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+                    CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+                    DEALINGS IN THE SOFTWARE.</>
+            </div>
+            <div id="op-license">
+
             </div>
         </div>
     </div>
@@ -188,6 +260,11 @@
     function Display(elem) {
         document.getElementById('installation').style.display = "none";
         document.getElementById('launching').style.display = "none";
+        document.getElementById('image-viewer').style.display = "none";
+        document.getElementById('audio-listener').style.display = "none";
+        document.getElementById('video-player').style.display = "none";
+        document.getElementById('license').style.display = "none";
+        document.getElementById('op-license').style.display = "none";
         document.getElementById(elem).style.display = "block"
     }
     function Launch() {
