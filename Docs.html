@@ -67,7 +67,7 @@
             font-size: 18px;
             max-width: 100%;
         }
-        .sideMenu p{
+        .sideMenu .regular{
             text-align: left;
             padding-left: 25px;
             cursor: pointer;
@@ -77,8 +77,20 @@
             background: #222;
             margin-bottom: 5px;
         }
-        .sideMenu p:hover{background: #111;}
-        .sideMenu p:active{background: #000;}
+        .sideMenu .regular:hover{background: #111;}
+        .sideMenu .regular:active{background: #000;}
+        .sideMenu .choosen{
+            text-align: left;
+            border-left: solid 10px #0f8;
+            padding-left: 15px;
+            cursor: pointer;
+            margin: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background: #000;
+            margin-bottom: 5px;
+        }
+        .sideMenu .choosen:hover{background: #111;}
         #search{
             border: 1px solid Cyan;
             outline: none;
@@ -144,18 +156,18 @@
         <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
     </div>
     <div class="container">
-        <div class="sideMenu">
-            <input type="text" id="search"><span style="font-size: 16px;cursor: pointer;"> 🔎</span>
-            <br><br><p onclick="Display('installation')">Installation</p>
-            <p onclick="Display('launching')">Launching</p>
-            <p onclick="Display('image-viewer')">Image Viewer</p>
-            <p onclick="Display('audio-listener')">Audio Listener</p>
-            <p onclick="Display('video-player')">Video Player</p>
-            <p onclick="Display('upcoming-features')">Upcoming Features</p>
-            <p onclick="Display('license')">License</p>
-            <p onclick="Display('op-license')">3rd party Licenses</p>
+        <div class="sideMenu" id="sideMenu">
+            <input type="text" id="search" autocomplete="off"><span style="font-size: 16px;cursor: pointer;"> 🔎</span>
+            <br><br><p onclick="Display('installation')" id='installation-button'>Installation</p>
+            <p onclick="Display('launching')" id='launching-button'>Launching</p>
+            <p onclick="Display('image-viewer')" id='image-viewer-button'>Image Viewer</p>
+            <p onclick="Display('audio-listener')" id='audio-listener-button'>Audio Listener</p>
+            <p onclick="Display('video-player')" id='video-player-button'>Video Player</p>
+            <p onclick="Display('upcoming-features')" id='upcoming-features-button'>Upcoming Features</p>
+            <p onclick="Display('license')" id='license-button'>License</p>
+            <p onclick="Display('op-license')" id='op-license-button'>3rd party Licenses</p>
         </div>
-        <div class="data">
+        <div class="data" id="data">
             <div id="installation">
                 <h1>Installation</h1>
                 <div>
@@ -318,20 +330,22 @@
     function GoAboutPage(){window.location.href = "./AboutUs";}
     function ReadDocs(){window.location.href = "./Docs";}
     function Display(elem) {
-        document.getElementById('installation').style.display = "none";
-        document.getElementById('launching').style.display = "none";
-        document.getElementById('image-viewer').style.display = "none";
-        document.getElementById('audio-listener').style.display = "none";
-        document.getElementById('video-player').style.display = "none";
-        document.getElementById('license').style.display = "none";
-        document.getElementById('op-license').style.display = "none";
-        document.getElementById('upcoming-features').style.display = "none";
+        let li = ['installation','launching','image-viewer','audio-listener','video-player',
+                     'license','op-license','upcoming-features']
+        for (let i = 0; i < 8; i++) {
+            document.getElementById(li[i]).style.display = "none"
+            document.getElementById(li[i]+"-button").className = "regular"
+        }
         document.getElementById(elem).style.display = "block"
+        document.getElementById(elem + "-button").className = "choosen"
+
     }
     function Launch() {
         app=window.open("./Cybex_Media_Player","Cybex Media Player","height=450,width=650");
         if (window.focus) {app.focus()}
         return false;
+    }
+    function Search() {
     }
     window.onload = Display('installation');
 </script>
