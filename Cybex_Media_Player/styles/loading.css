@@ -1,0 +1,62 @@
+@keyframes open {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #111;
+    color: #eee;
+    font-family: Arial;
+}
+
+#loading * {
+    position: absolute;
+}
+
+#loader {
+    top: 160px;
+    left: 40%;
+    height: 20px;
+    align-content: center;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading__ring {
+    position: absolute;
+    left: 0px;
+    width: 120px;
+    height: 120px;
+}
+
+.loading__ring:first-child {
+    transform: skew(30deg, 20deg);
+}
+
+.loading__ring:last-child {
+    transform: skew(-30deg, -20deg) scale(-1, 1);
+}
+
+.loading__ring:last-child svg {
+    animation-delay: -0.25s;
+}
+
+.loading__ring svg {
+    animation: rotate 0.5s linear infinite;
+    fill: #0f8;
+}

@@ -4,10 +4,8 @@ window.onbeforeunload = function (e) {
     e.preventDefault();
 };
 document.onkeydown = function (e) {
-    
     e = e || window.event;//Get event
     console.log(e.which)
-   
     if (!e.ctrlKey) return;
     var code = e.which || e.keyCode;//Get key code
 
