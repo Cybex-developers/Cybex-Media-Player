@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+    overflow: hidden;
 }
 #Menu{
     width: 100%;
