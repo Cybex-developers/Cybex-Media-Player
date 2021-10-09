@@ -1,3 +1,6 @@
+*{behavior: url(PIE.htc);}
+* *{behavior: url(PIE.htc);}
+
 body{
     background: url("https://wallpaperaccess.com/full/2149488.jpg");
     background-repeat: no-repeat;
@@ -8,7 +11,7 @@ body{
 #Menu{
     width: 100%;
     height: 6.9999%;
-    position: absolute;
+    position: fixed;
     top:0%;
     background-color: #0001;
     left: 0%;
@@ -33,7 +36,7 @@ body{
 #Heading{
     font-size: 18px;
     font-family: Arial;
-    position: absolute;
+    position: fixed;
     top: -4px;
     left: 10px;
 }
@@ -45,11 +48,14 @@ body{
     text-align: center;
     width: 100%;
     height: 605px;
-    position: absolute;
+    position: fixed;
     left: 0px;
     top:52px;
 }
 #Container a{text-decoration: none;color: orange; position: relative;top: 75%;cursor: pointer;}
+#Container a:hover{text-decoration: underline;}
+#Container a:active,#Container a:focus{color: #ff0500;text-decoration: underline;}
+
 #Container #downnow{
     width: 200px;
     height: 60px;
@@ -57,11 +63,11 @@ body{
     cursor: pointer;
     background-color: Blue;
     font-size: 24px;
-    position: absolute;
+    position: fixed;
     color: #fff;
     border-radius: 12px;
     outline: none;
-    top: 340px;
+    top: 390px;
     left: 690px;
     transition: 1s;
 }
@@ -75,18 +81,18 @@ body{
     cursor: pointer;
     background-color: #ff4500;
     font-size: 24px;
-    position: absolute;
+    position: fixed;
     color: #fff;
     border-radius: 12px;
     outline: none;
-    top: 340px;
+    top: 390px;
     left: 920px;
     transition: 1s;
 }
 #Container #launchnow:hover{background: #ff2500;}
 #Container #launchnow:active{background: #ff0500;}
 .message{
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     font-size: 18px;
     color: Black;
@@ -94,4 +100,12 @@ body{
     padding: 5px;
     padding-left: 15px;padding-right: 15px;
     border-radius: 5px;
+}
+.dl{
+    position: fixed;
+    left: 14%;
+    margin-left: 20px;
+}
+.dl:hover{
+    color: #0f8;
 }
