@@ -9,3 +9,4 @@ function Download() {
 function Launch() {
     app = window.open("./Cybex_Media_Player/index.html","Cybex Media Player","popup,start-maximized")
 }
+//1366x768

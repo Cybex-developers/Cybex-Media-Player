@@ -6,27 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybex Media Player</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <script>
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        var element = document.getElementById('text');
-        if (isMobile) {
-            window.location.href = "./mobile/index"
-        }
-    </script>
     <link rel="stylesheet" href="./style.css">
     <style>
         #Container p{
             text-align: left;
             position: fixed;
             left: 50%;
-            top: 100px;
+            top: 18%;
         }
         #Container img{
             position: fixed;
             left: 1%;
-            top: 60px;
-            width: 650px;
-            height: 448px;
+            top: 15%;
+            width: 47.58%;
+            height: auto;
         }
         #Version{
             position: fixed;
@@ -41,15 +34,13 @@
     </style>
 </head>
 <body>
-
     <script src="./index.js"></script>
-    
     <p id="Heading">Cybex Media Player</p>
     <div id="Menu">
         <button id="Home" onclick="GoHome()">Home</button>
         <button id="Docs" onclick="ReadDocs()">Docs</button>
         <button id="Download" onclick="GoDownload()">Download</button>
-        <button id="About" style="width: 120px;" onclick="GoAboutPage()">About Us</button>
+        <button id="About" style="width: 8.78%;" onclick="GoAboutPage()">About Us</button>
         <button id="Help" onclick="GoHelpPage()">Help</button>
     </div>
     <div id="Container">
@@ -65,7 +56,7 @@
     
         <a class="dl" onclick="ReadDocs()">Read the Docs</a> 
         <a href="AboutUs" class="dl">About Us</a>
-        <p style="top: 90%;left: 56%;color: Red;font-weight: 900;padding: 5px;text-shadow: 0 0 10px White;"> Copyright (c) Cybex Studios 2021</p>
+        <p style="top: 90%;left: 56%;color: Red;font-weight: 900;padding: 0.366%;text-shadow: 0 0 10px White;"> Copyright (c) Cybex Studios 2021</p>
         <button onclick="Download()" id="downnow">Download Now</button>
         <button onclick="Launch()" id="launchnow" >Launch Now</button>
 
