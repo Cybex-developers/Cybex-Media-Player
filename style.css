@@ -50,15 +50,15 @@ body{
     height: 92.08%;
     position: fixed;
     left: 0px;
-    top:52px;
+    top:7.91%;
 }
 #Container a{text-decoration: none;color: orange; position: relative;top: 75%;cursor: pointer;}
 #Container a:hover{text-decoration: underline;}
 #Container a:active,#Container a:focus{color: #ff0500;text-decoration: underline;}
 
 #Container #downnow{
-    width: 200px;
-    height: 60px;
+    width: 14.64%;
+    height: 9.13%;
     border: none;
     cursor: pointer;
     background-color: Blue;
@@ -67,16 +67,16 @@ body{
     color: #fff;
     border-radius: 12px;
     outline: none;
-    top: 390px;
-    left: 690px;
+    top: 59.36%;
+    left: 50.51%;
     transition: 1s;
 }
 #Container #downnow:hover{background: #04f;}
 #Container #downnow:active{background: #08f;}
 
 #Container #launchnow{
-    width: 200px;
-    height: 60px;
+    width: 14.64%;
+    height: 9.13%;
     border: none;
     cursor: pointer;
     background-color: #ff4500;
@@ -85,15 +85,15 @@ body{
     color: #fff;
     border-radius: 12px;
     outline: none;
-    top: 390px;
-    left: 920px;
+    top: 59.36%;
+    left: 67.34%;
     transition: 1s;
 }
 #Container #launchnow:hover{background: #ff2500;}
 #Container #launchnow:active{background: #ff0500;}
 .message{
     position: fixed;
-    bottom: 20px;
+    bottom: 3.04%;
     font-size: 18px;
     color: Black;
     background: #fff6;
@@ -104,7 +104,7 @@ body{
 .dl{
     position: fixed;
     left: 14%;
-    margin-left: 20px;
+    margin-left: 1.46%;
 }
 .dl:hover{
     color: #0f8;
