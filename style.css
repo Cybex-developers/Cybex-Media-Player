@@ -24,7 +24,8 @@ body{
     position: relative;
     left: 50%;
     color: #fff;
-    width:7%;
+    padding-left: 20px;
+    padding-right: 20px;
     top: 0px;
     height: 100%;
     outline: none;
@@ -57,8 +58,9 @@ body{
 #Container a:active,#Container a:focus{color: #ff0500;text-decoration: underline;}
 
 #Container #downnow{
-    width: 14.64%;
-    height: 9.13%;
+    padding: 16px;
+    padding-right: 22px;
+    padding-left: 22px;
     border: none;
     cursor: pointer;
     background-color: Blue;
@@ -75,8 +77,9 @@ body{
 #Container #downnow:active{background: #08f;}
 
 #Container #launchnow{
-    width: 14.64%;
-    height: 9.13%;
+    padding: 16px;
+    padding-right: 22px;
+    padding-left: 22px;
     border: none;
     cursor: pointer;
     background-color: #ff4500;
@@ -106,6 +109,6 @@ body{
     left: 14%;
     margin-left: 1.46%;
 }
-.dl:hover{
-    color: #0f8;
+@media screen and (width:1024px){
+    
 }
