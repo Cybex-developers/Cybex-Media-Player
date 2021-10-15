@@ -110,14 +110,20 @@ body{
     margin-left: 1.46%;
     color: #80f;
 }
-@media screen and (width:1024px){
+.info{
+    max-width: 500px;
+}
+@media screen and (max-width:1024px){
     #Compatibility{
         top: 38%;
     }
     #launchnow{
-        left: 6%;
+        margin-left: 50px;
     }
     .dl{
         left: 18%;
+    }
+    #Version{
+        left: 65%;
     }
 }
