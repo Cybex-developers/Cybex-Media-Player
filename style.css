@@ -108,7 +108,16 @@ body{
     position: fixed;
     left: 14%;
     margin-left: 1.46%;
+    color: #80f;
 }
 @media screen and (width:1024px){
-    
+    #Compatibility{
+        top: 38%;
+    }
+    #launchnow{
+        left: 6%;
+    }
+    .dl{
+        left: 18%;
+    }
 }
