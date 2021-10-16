@@ -127,3 +127,31 @@ body{
         left: 18%;
     }
 }
+@media screen and (min-width:1024px){
+    #Compatibility{
+        top: 38%;
+    }
+    #Version{
+        left: 67%;
+    }
+    #launchnow{
+        margin-left: 50px;
+    }
+    .dl{
+        left: 18%;
+    }
+}
+@media screen and (width:1024px){
+    #Compatibility{
+        top: 38%;
+    }
+    #Version{
+        left: 67%;
+    }
+    #launchnow{
+        margin-left: 50px;
+    }
+    .dl{
+        left: 18%;
+    }
+}
