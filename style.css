@@ -117,13 +117,13 @@ body{
     #Compatibility{
         top: 38%;
     }
+    #Version{
+        left: 66%;
+    }
     #launchnow{
         margin-left: 50px;
     }
     .dl{
         left: 18%;
-    }
-    #Version{
-        left: 66%;
     }
 }
