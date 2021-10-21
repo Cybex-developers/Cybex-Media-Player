@@ -1,0 +1,30 @@
+#show-container {
+    position: absolute;
+    top: 0px;
+    height: 90%;
+    left: 0px;
+    width: 100%;
+}
+#video-container {
+    border: 1px solid #888;
+    border: none;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    left: 0px;
+    width: 100%;
+}
+#img-container {
+    position: relative;
+    top: 0px;
+    height: 100%;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    width: auto;
+    height: auto;
+}

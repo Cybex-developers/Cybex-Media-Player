@@ -89,7 +89,7 @@ body{
     border-radius: 12px;
     outline: none;
     top: 59.36%;
-    left: 67.34%;
+    left: 90px;
     transition: 1s;
 }
 #Container #launchnow:hover{background: #ff2500;}
@@ -106,28 +106,23 @@ body{
 }
 .dl{
     position: fixed;
-    left: 14%;
+    left: 13%;
     margin-left: 1.46%;
     color: #80f;
 }
 .info{
     max-width: 500px;
 }
-@media screen and (max-width:1024px){
-    #Compatibility{
-        top: 38%;
-    }
-    #Version{
-        left: 68%;
-    }
-    #launchnow{
-        margin-left: 50px;
-    }
-    .dl{
-        left: 18%;
-    }
+#Container #copyright{
+    position: absolute;
+    top: 90%;
+    left: 56%;
+    color: Red;
+    font-weight: 900;
+    padding: 0.366%;
+    text-shadow: 0 0 10px White;
 }
-@media screen and (min-width:1024px){
+@media screen and (max-width:1024px){
     #Compatibility{
         top: 38%;
     }
@@ -153,5 +148,110 @@ body{
     }
     .dl{
         left: 18%;
+    }
+}
+
+@media screen and (min-width:1920px){
+    *{font-size: 32px;}
+    #Heading{
+        font-size: 32px;
+        margin-left: 20px;
+        font-family: Arial;
+    }
+    #Menu button{
+        padding-right: 40px;
+        padding-left: 40px;
+        font-size: 32px;
+        font-family: Arial;
+    }
+    .info{
+        font-size: 32px;
+        max-width: 1000px;
+    }
+    #Compatibility{
+        font-size: 32px;
+        top: 430px;
+    }
+    #Version{
+        font-family: 'Arial';
+        font-size: 48px;
+        top: 540px;
+        left: 1240px;
+    }
+    .message{
+        left: 40px;
+        bottom: 30px;
+        font-family: 'Arial';
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 32px;
+        border-radius: 10px;
+    }
+    #Container #copyright{
+        left: -48px;
+    }
+    #Container #downnow{
+        font-size: 46px;
+        padding: 25px;
+        border-radius: 20px;
+    }
+    #Container #launchnow{
+        font-size: 46px;
+        padding: 25px;
+        left: 1350px;
+        border-radius: 20px;
+    }
+}
+@media screen and (width:1920px){
+    *{font-size: 32px;}
+    #Heading{
+        font-size: 32px;
+        margin-left: 20px;
+        font-family: Arial;
+    }
+    #Menu button{
+        padding-right: 40px;
+        padding-left: 40px;
+        font-size: 32px;
+        font-family: Arial;
+    }
+    .info{
+        font-size: 32px;
+        max-width: 1000px;
+    }
+    #Compatibility{
+        font-size: 32px;
+        top: 430px;
+    }
+    #Version{
+        font-family: 'Arial';
+        font-size: 48px;
+        top: 540px;
+        left: 1240px;
+    }
+    .message{
+        left: 40px;
+        bottom: 30px;
+        font-family: 'Arial';
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 32px;
+        border-radius: 10px;
+    }
+    #Container #copyright{
+        left: -48px;
+    }
+    #Container #downnow{
+        font-size: 46px;
+        padding: 25px;
+        border-radius: 20px;
+    }
+    #Container #launchnow{
+        font-size: 46px;
+        padding: 25px;
+        left: 1330px;
+        border-radius: 20px;
     }
 }

@@ -1,4 +1,4 @@
-document.addEventListener('contextmenu', event => event.preventDefault());
+/*document.addEventListener('contextmenu', event => event.preventDefault());
 let keypressedctrl = false;
 window.onbeforeunload = function (e) {
     e.preventDefault();
@@ -7,6 +7,9 @@ document.onkeydown = function (e) {
     e = e || window.event;//Get event
     console.log(e.which)
     if (!e.ctrlKey) return;
+    if(e.which == 32){
+        e.preventDefault()
+    }
     var code = e.which || e.keyCode;//Get key code
 
     switch (code) {
@@ -23,6 +26,5 @@ document.onkeydown = function (e) {
                 e.preventDefault()
                 e.stopPropagation();
                 break;
-    
     }
-};
+};*/

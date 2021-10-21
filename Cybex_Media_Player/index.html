@@ -4,10 +4,7 @@
     <meta charset="utf-8">
     <title>Cybex Media Player</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <div id="styles">
-        <link rel="stylesheet" href="styles/loading.css">
-        <link rel="stylesheet" href="styles/index.css">
-    </div>
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body id="body">
     <div id="loading" style="z-index: 1">
@@ -23,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <h1 style="bottom: 50px;left: 260px">v2021.1</h1>
+        <h1 style="bottom: 50px;left: 260px">v2021.2</h1>
         <h2 style="color: Gold;bottom: 0px;left: 240px">Cybex Studios</h2>
     </div>
     <div id="show-container">
@@ -34,14 +31,7 @@
             <source id="aud-source">
         </audio>
         <div id="img-container">
-            <svg src="welcome.png" id="image-main">
-                <defs>
-                    <clipPath id="myCircle">
-                        <rect width="320" height="240"/>
-                    </clipPath>
-                 </defs>
-                 <image width="320" id="imgr" height="240" href="welcome.png" clip-path="url(#myCircle)" />
-            </svg>
+            <img id="image-main" src="./welcome.png">
         </div>
         <div class="open">
             <input type="file" id="video-finder" style="display: none" accept="image/*" onchange="change.video()">
@@ -64,7 +54,7 @@
             <a onclick="ShowMenu('rotate-popup','block')">Rotate</a>
             <a onclick="ShowMenu('zoom-options','block')">Zoom Options</a>
             <a onclick="AvailableSoon()">Convert to:</a>
-            <a onclick="AvailableSoon()">Save</a>
+            <a onclick="Save()">Save</a>
         </div>
         <button class="moreIoptions" onclick="ShowMenu('more_options','grid')">⋮</button>
         <div id="more_options">
@@ -95,9 +85,9 @@
             <div id="zoom-options" style="text-align: center;bottom: 31px;height: 140px;left: 270px;width: 150px">
                 <a onclick="ZoomOptions.PixelToPixel()">Pixel to Pixel</a>
                 <a onclick="ZoomOptions.FitTheArea()">Fit the Area</a><hr style="width: 142px">
-                <a onclick="ZoomOptions.ZoomIn()">Zoom In:</a>
+                <a onclick="ZoomOptions.ZoomIn()">Zoom In</a>
                 <input type="number" max="1000" min="1" value="100" id="zoom" oninput="ZoomOptions.ZoomNum()"><span>%</span>
-                <a onclick="ZoomOptions.ZoomOut()">Zoom Out:</a>
+                <a onclick="ZoomOptions.ZoomOut()">Zoom Out</a>
             </div>
             <div id="convert-types" style="width: 260px;left: 360px">
                 <a>.png (Portable Network Graphics)</a><hr style="width: 252px">
@@ -108,11 +98,6 @@
                 <a>.bmp (Bitmap Image)</a><hr style="width: 252px">
                 <a>.webp (Web Picture)</a>
             </div>
-        </div>
-        <div id="img-url-popup" style="display: none">
-            <h3 style="width: 400px;text-align: center">Enter Web URL or 'data:' for Images</h3>
-            <input type="text" id="popup" style="width: 350px;cursor: text">
-            <button onclick="ViewWebImg()">Go</button>
         </div>
         <div id="img-popups">
             <div id="filters-popup" style="width: 408px;display: none;">
@@ -135,12 +120,17 @@
             </div>
             <div id="rotate-popup" style="width: 408px;display: none;">
                 <h2 style="left: 5px;width: calc(100% - 5px);text-align: center;">Rotation:</h2>
-                <a style="margin-left: 14%;" onclick="RotateSuggest(90)">90deg</a>
-                <a onclick="RotateSuggest(180)">180deg</a>
-                <a onclick="RotateSuggest(270)">270deg</a>
-                <a onclick="RotateSuggest(360)">Normal</a>
+                <a style="margin-left: 14%;" onclick="rotateOptions.RotateSuggest(90)">90deg</a>
+                <a onclick="rotateOptions.RotateSuggest(180)">180deg</a>
+                <a onclick="rotateOptions.RotateSuggest(270)">270deg</a>
+                <a onclick="rotateOptions.RotateSuggest(360)">Normal</a>
                 <input type="number" placeholder="Enter rotation in degree" min="0" max="360" id="rot-deg" onkeydown="FixBug4()">
-                <button onclick="Rotate()">Rotate</button>
+                <button onclick="rotateOptions.Rotate()">Rotate</button>
+            </div>
+            <div id="img-url-popup" style="display: none">
+                <h3 style="width: 400px;text-align: center">Enter Web URL or 'data:' for Images</h3>
+                <input type="text" id="popup" style="width: 350px;cursor: text">
+                <button onclick="ViewWebImg()">Go</button>
             </div>
         </div>
     </div>
@@ -151,6 +141,7 @@
 <div id="scripts">
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/libs/cybex-web2exe.js"></script>
+    <script src="js/libs/saveSvgAsPng.js"></script>
     <script src="js/index.js"></script>
     <script src="js/more-options.js"></script>
     <script src="js/auvid.js"></script>

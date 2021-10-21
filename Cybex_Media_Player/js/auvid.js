@@ -1,7 +1,6 @@
 setTimeout(function () {
     CloseMessage()
 }, 5000)
-
 setInterval(function () {
     if(happening === false){
         if (video.readyState > 0) {
@@ -37,7 +36,7 @@ setInterval(function () {
     }
 
 }, 100)
-$('#play-pause').click(function () {
+function PP() {
     let mediaFile = $(video).get(0);
     if (mediaFile.paused) {
         mediaFile.play();
@@ -46,7 +45,8 @@ $('#play-pause').click(function () {
         mediaFile.pause();
         PlayPause.innerHTML = "||"
     }
-});
+}
+$('#play-pause').click(function () {PP()});
 function ReTime() {
     video.currentTime = VidTimeRange.value;
 }
@@ -94,8 +94,7 @@ function ApplyVolume() {
     }
     document.getElementById("volume-value").innerHTML = tex;
     document.getElementById("volume-value").style.bottom = (parseFloat(volumeRange.value) * 1.5 + 15) + "px";
-}
-ApplyVolume()
+}ApplyVolume()
 function DisShow() {
     setTimeout(function () {
         volumeRange.style.display = "none";

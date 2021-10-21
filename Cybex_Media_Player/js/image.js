@@ -27,8 +27,14 @@ var ZoomOptions = {
         document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
     },
     FitTheArea : function () {
-        imgtag.style.width = "100%";imgtag.style.height = "100%";imgtag.style.zoom = 1
-        document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
+        if(ImgWidth >= ImgHeight){
+            imgtag.style.width = "100%";imgtag.style.height = 'auto';imgtag.style.zoom = 1
+            document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
+        }
+        else{
+            imgtag.style.height = "100%";imgtag.style.width = 'auto';imgtag.style.zoom = 1
+            document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
+        }
     },
     ZoomIn : function () {
         imgtag.style.width = "auto";imgtag.style.height = "auto";
@@ -115,6 +121,24 @@ var rotateOptions = {
     RotateSuggest : function(deg) {
         document.getElementById('rot-deg').value = deg;
     }
+}
+function Save() {
+    const opts = {
+        types: [{
+          description: 'Image file',
+          accept: {'images/*': ['.png','.svg','.jpg']},
+        }],
+      };
+    const fileHandle = window.showSaveFilePicker(opts);
+    setTimeout(() => {
+        const writable = fileHandle.createWritable();
+        setTimeout(() => {
+            writable.write("Hello World");
+            setTimeout(() => {
+                writable.close();
+            }, 10);
+        }, 10);
+    }, 10);
 }
 function FixBug4() {
     let val = document.getElementById('rot-deg').value
