@@ -175,7 +175,7 @@ body{
         font-family: 'Arial';
         font-size: 48px;
         top: 540px;
-        left: 1240px;
+        left: 1250px;
     }
     .message{
         left: 40px;
@@ -227,7 +227,7 @@ body{
         font-family: 'Arial';
         font-size: 48px;
         top: 540px;
-        left: 1240px;
+        left: 1250px;
     }
     .message{
         left: 40px;
@@ -250,7 +250,7 @@ body{
     #Container #launchnow{
         font-size: 46px;
         padding: 25px;
-        left: 1330px;
+        left: 1350px;
         border-radius: 20px;
     }
 }
