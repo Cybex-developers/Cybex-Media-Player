@@ -145,6 +145,15 @@
         .link:active{color: #f00;}
         .link::selection{cursor: not-allowed;}
         br::selection{color: transparent;}
+        .searchy{font-size: 16px;cursor: pointer;}
+        .licensey{
+            margin-left: 30px;
+            max-width: 800px;
+        }
+        .thr-licensey{
+            margin-left: 50px;
+            max-width: 800px;
+        }
     </style>
 </head>
 <body>
@@ -158,7 +167,7 @@
     </div>
     <div class="container">
         <div class="sideMenu" id="sideMenu">
-            <input type="text" id="search" autocomplete="off"><span style="font-size: 16px;cursor: pointer;"> 🔎</span>
+            <input type="text" id="search" autocomplete="off"><span class="searchy"> 🔎</span>
             <br><br><p onclick="Display('installation')" id='installation-button'>Installation</p>
             <p onclick="Display('launching')" id='launching-button'>Launching</p>
             <p onclick="Display('image-viewer')" id='image-viewer-button'>Image Viewer</p>
@@ -275,7 +284,7 @@
             </div>
             <div id="license">
                 <h1>License</h1>
-                <div style="margin-left: 30px;max-width: 800px;">
+                <div class="licensey">
                     Copyright (c) 2021 Cybex Studios <br><br>
                     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
                     documentation files (the "Software"), to deal in the Software without restriction, including without 
@@ -296,7 +305,7 @@
                 <h1>3rd Party Licenses</h1>
                 <div>
                     <h2>Jquery</h2><br>
-                    <div style="margin-left: 50px;max-width: 800px;">
+                    <div class="thr-licensey">
                         Copyright OpenJS Foundation and other contributors, https://openjsf.org/ <br><br>
                         Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
                         documentation files (the "Software"), to deal in the Software without restriction, including without 
@@ -324,6 +333,60 @@
         </div>
     </div>
 </body>
+<style>
+    @media screen and (min-width:1920px){
+        *{font-size: 32px;}
+        #Heading{
+            font-size: 32px;
+            margin-left: 20px;
+            font-family: Arial;
+        }
+        #Menu button{
+            padding-right: 40px;
+            padding-left: 40px;
+            font-size: 32px;
+            font-family: Arial;
+        }
+        .sideMenu{
+            width: 360px;
+        }
+        .data{
+            left: 360px;
+            width: calc(100% - 410px);
+        }
+        #search{
+            width: 280px;
+            border-width: 2px;
+            border-radius: 10px;
+            font-size: 24px;
+            padding: 3px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-family: Arial;
+            margin-top: 20px;
+        }
+        #search:focus{box-shadow: 0 0 8px Cyan;}
+        .searchy{
+            font-size: 30px;
+        }
+        h1{
+            font-size: 58px;
+        }
+        h2{font-size: 48px;}
+        .data div div{margin-left: 50px;}
+        .data div div span{margin-left: 100px;}
+        .data div div p{max-width: 1000px;}
+        .licensey{
+            margin-left: 50px;
+            max-width: 1200px;
+        }
+        .thr-licensey{
+            margin-left: 80px;
+            max-width: 1200px;
+        }
+        .data::-webkit-scrollbar{width: 25px;}
+    }
+</style>
 <script>
     function GoHome(){window.location.href = "./";}
     function GoHelpPage(){window.location.href = "./Help";}

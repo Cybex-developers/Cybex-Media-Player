@@ -130,7 +130,7 @@ body{
         left: 68%;
     }
     #launchnow{
-        margin-left: 50px;
+        left: -100px;
     }
     .dl{
         left: 18%;
@@ -144,13 +144,12 @@ body{
         left: 68%;
     }
     #launchnow{
-        margin-left: 50px;
+        left: -100px;
     }
     .dl{
         left: 18%;
     }
 }
-
 @media screen and (min-width:1920px){
     *{font-size: 32px;}
     #Heading{
