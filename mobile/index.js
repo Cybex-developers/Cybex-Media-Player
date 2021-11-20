@@ -4,3 +4,6 @@ function ShowDownloads() {
 function GoHome() {
     window.location.href = "./"
 }
+function ShowAboutUs() {
+    window.location.href = "./AboutUs"
+}

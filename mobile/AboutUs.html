@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
     <title>Cybex Media Player</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        .card{
+            height: 75vh;
+            border-radius: 2vh;
+            padding: 1vh;
+            width: 80vw;
+            box-shadow: 0 0 3px rgb(209, 184, 184);
+            background: #0008;
+            position: fixed;
+            text-align: center;
+            left: 10vw;
+            top: 10vh;
+        }
+        .card hr{
+            position: relative;
+            width: 270px;
+            background: #0f8;
+            border: none;
+            height: 1px;
+        }
+        .card h2{
+            font-size: 5vh;
+            margin: 0;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+        .card img{
+            height: 25vh;
+            width: 25vh;
+            border-radius: 12.5vh;
+        }
+        .words{font-size: 3.05vh;}
+        .card h3{font-size: 4.5vh;margin-top: 1vh;}
+    </style>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
 </head>
@@ -15,13 +49,24 @@
         <p class="name">Cybex Media Player</p>
     </div>
     <div class="content">
+        <div class="card">
+            <h2>Dev Kapoor</h1>
+            <img src="./images/camera.png"><hr>
+            <div class="words">
+                I'm here to provide you with a great application.I'm able to do this only of the efforts of my teachers.
+                Currently I'm the only developer here but no one knows what will happen in future.I will try my best to
+                provide you with more great applications.
+            </div><hr>
+            <h3>CEO and Founder</h3>
+        </div>
     </div>
     <div class="bottomer">
-        <i class="fa fa-info" style="margin-left: 0.5vw;"></i>
-        <i class="fa fa-download"></i>
-        <i class="fa fa-home"></i>
+        <i class="fa fa-info" style="margin-left: 0.5vw;" onclick="ShowAboutUs()"></i>
+        <i class="fa fa-download" onclick="ShowDownloads()"></i>
+        <i class="fa fa-home" onclick="GoHome()"></i>
         <i class="fa fa-book"></i>
         <i class="fa fa-question"></i>
     </div>
 </body>
+<script src="./index.js"></script>
 </html>
