@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page Not Found</title>
+    <script>
+        var isMobile = /iPhone|iPad|iPod|Blackberry|IEMobile|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.replace("./mobile/404")
+        }
+    </script>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <style>
         body {
