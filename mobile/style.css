@@ -1,17 +1,53 @@
-body{
-    background: url("https://images.hdqwalls.com/download/best-nature-image-360x640.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+body,html{
+    overflow: hidden;
     font-family: Arial;
 }
-#header{
-    position: absolute;
+.header{
+    position: fixed;
     top: 0;
     left: 0;
-    background: #fff4;
+    background: #0004;
+    color: #eee;
     width: auto;
-}
-#header *{position: absolute;}
-#info{
+    height: 7vh;
+    width: 100vw;
+    font-size: 5vw;
     text-align: center;
+}
+#background-image{
+    height: 100.1vh;
+    width: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.header .name{
+    margin-top: 2vh;
+}
+.bottomer{
+    position: fixed;
+    top: 93vh;
+    left: 0;
+    width: 100vh;
+    height: 7vh;
+    background: #fff1;
+}
+.bottomer i{
+    font-size: 4vh;
+    padding: 6.5vw;
+    padding-top: 1.5vh;
+    padding-bottom: 1.7vh;
+    border: none;
+    outline: none;
+    color: #eee;
+}
+.bottomer i:active{background: #fff1;}
+.content{
+    position: fixed;
+    left: 0;
+    top: 7vh;
+    width: 100vw;
+    color: #eee;
+    height: 86vh;
+    font-size: 5vw;
 }

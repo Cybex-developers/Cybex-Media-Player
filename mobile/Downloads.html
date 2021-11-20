@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+    <title>Cybex Media Player</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+    <style>
+        .card{
+            height: 75vh;
+            border-radius: 2vh;
+            padding: 1vh;
+            width: 80vw;
+            box-shadow: 0 0 3px rgb(209, 184, 184);
+            background: #0008;
+            position: fixed;
+            text-align: center;
+            left: 10vw;
+            top: 10vh;
+        }
+        .card hr{
+            position: relative;
+            width: 270px;
+            background: #0f8;
+            border: none;
+            height: 1px;
+        }
+        .whatNew{
+            text-align: left;
+            overflow-y: scroll;
+            height: 150px;
+        }
+        .whatNew::-webkit-scrollbar{-webkit-appearance: none;}
+        .whatNew::-webkit-scrollbar-thumb{
+            -webkit-appearance: none;
+            width: 10px;
+            background: #0006;
+        }
+        .whatNew::-webkit-scrollbar-thumb:hover{background: #0008;}
+        .whatNew::-webkit-scrollbar-thumb:active{background: #000a;}
+        .versions{
+            text-align: left;
+            height: 4vh;
+        }
+        .versions a{color: #0af;}
+        .versions a:hover{color: #0cf;}
+        .versions a:active{color: #0ff;}
+        .next,.previous{
+            position: fixed;
+            background: transparent;
+            color: #eee;
+            font-size: 10vh;
+            border: none;
+        }
+        .next{
+            right: -2vw;
+            top: 40vh;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.pinimg.com/originals/5e/c2/e9/5ec2e9a2f543351efa1a2469c4ee03d2.jpg" id="background-image">
+    <div class="header">
+        <p class="name">Cybex Media Player downloads</p>
+    </div>
+    <div class="content">
+        <button class="previous"><</button>
+        <div class="card">
+            <h1>v2021.2</h1><hr>
+            <h3 style="text-align: left;">Downloads :-</h3>
+            <p class="versions">
+                <a href="./archives/2021/Cybex Media Player 2021.2.1 Setup.exe">v2021.2.1</a><br><br>
+            </p><hr>
+            <h3 style="text-align: left;">What's New :-</h3>
+            <p class="whatNew">
+                1. Keyboard Shortcuts <br><br>
+                2. New Splash screen <br><br>
+                3. Bug Fixes <br><br>
+                4. New features for images <br>
+            </p>
+        </div>
+        <button class="next">➧</button>
+    </div>
+    <div class="bottomer">
+        <i class="fa fa-info" style="margin-left: 0.5vw;"></i>
+        <i class="fa fa-download"></i>
+        <i class="fa fa-home"></i>
+        <i class="fa fa-book"></i>
+        <i class="fa fa-question"></i>
+    </div>
+</body>
+</html>
