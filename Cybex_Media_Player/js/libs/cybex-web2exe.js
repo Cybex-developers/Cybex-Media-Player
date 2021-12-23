@@ -1,4 +1,4 @@
-/*document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 let keypressedctrl = false;
 window.onbeforeunload = function (e) {
     e.preventDefault();
@@ -27,4 +27,4 @@ document.onkeydown = function (e) {
                 e.stopPropagation();
                 break;
     }
-};*/
+};

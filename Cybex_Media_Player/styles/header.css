@@ -1,0 +1,151 @@
+.header-buttons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: #181818;
+    border-bottom: 1px solid #080808;
+}
+.header-buttons button{
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #181818;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    height: 100%;
+    font-size: 15px;
+}
+.header-buttons button::first-letter{text-decoration: underline;}
+.header-buttons button:hover{background: #282828;}
+.header-buttons button:active{background: #333;}
+.header_menu{
+    position: absolute;
+    left: 10px;
+    background: #181818;
+    width: 200px;
+    display: none;
+    top: 31px;
+    padding-bottom: 5px;    
+}
+.header_menu .header-menu-button{
+    width: 170px;
+    height: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 10px;
+    font-family: Arial;
+    background: #181818;
+    color: #eee;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+.header-menu-button:hover{background: #282828;}
+.header-menu-button:active{background: #333;}
+.header-menu-button .name{    
+    color: #eee;
+    text-align: left;
+    cursor: pointer;
+}
+.header-menu-button .short-key{
+    cursor: pointer;
+    position: relative;
+    top: -14px;
+    color: #aaa;
+    text-align: right;
+    font-size: 12px;
+}
+.header_menu hr{
+    margin: 3px 0;
+    height: 1px;
+    border: none;
+    background: #48f;
+    position: relative;
+    left: 4px;
+    width: 192px;
+}
+.header_menu .header-sub-menu{
+    width: 170px;
+    height: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 10px;
+    font-family: Arial;
+    background: #181818;
+    color: #eee;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+.header-sub-menu .submenu-symbol{
+    position: relative;
+    top: -20px;
+    left: 160px;
+    cursor: pointer;
+}
+.header-sub-menu .name{cursor: pointer;}
+.header-sub-menu:hover{background: #282828;}
+.header-sub-menu:active{background: #333;}
+.header-menu-number-input{
+    height: 16px;
+    background: #181818;
+    border: 1px solid #08f;
+    width: 42px;
+    outline: none;
+    color: #eee;
+    cursor: text;
+    position: relative;
+    top: -37px;
+    left: 100px;
+}
+.header-menu-number-input:focus{border: 2px solid #08f;height: 14px;width: 40px;}
+.header-menu-number-input::-webkit-inner-spin-button{display: none;}
+.header-menu-input-number-cont{
+    color: #eee;font-family: Arial;
+    height: 20px;
+    width: 170px;
+    height: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.header-menu-input-number-cont .unit{position: relative;top: -18px;left: 155px;}
+.header_menu .sub_menu{
+    position: absolute;
+    left: 200px;
+    width: 200px;
+    padding-bottom: 5px;  
+    top: 0px;
+    background: #1c1c1c;
+    display: none;
+    border-left: 1px solid #0ff;
+}
+.sub_menu .header-sub-menu-button{
+    width: 169px;
+    height: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 10px;
+    font-family: Arial;
+    background: #1c1c1c;
+    color: #eee;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+.header-sub-menu-button:hover{background: #282828;}
+.header-sub-menu-button:active{background: #333;}
+.header-sub-menu-button .name{    
+    color: #eee;
+    text-align: left;
+    cursor: pointer;
+}
+.header-sub-menu-button .short-key{
+    cursor: pointer;
+    position: relative;
+    top: -14px;
+    color: #aaa;
+    text-align: right;
+    font-size: 12px;
+}

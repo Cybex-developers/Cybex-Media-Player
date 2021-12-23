@@ -5,8 +5,9 @@
     <title>Cybex Media Player</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="import" href="html/header.html">
 </head>
-<body id="body">
+<body id="body" onload="top.window.focus()">
     <div id="loading" style="z-index: 1">
         <h1 style="top: 20px;left: 180px;color: #c34cfe">Cybex Media Player</h1>
         <h3 style="top: 80px;left: 140px;">Made for India, Made by India, Made in India</h3>
@@ -23,129 +24,183 @@
         <h1 style="bottom: 50px;left: 260px">v2021.2</h1>
         <h2 style="color: Gold;bottom: 0px;left: 240px">Cybex Studios</h2>
     </div>
-    <div id="show-container">
-        <video id="video-container" style="background-size: cover;display: none">
-            <source id="vid-source">
-        </video>
-        <audio id="audio-container" style="display: none">
-            <source id="aud-source">
-        </audio>
-        <div id="img-container">
-            <img id="image-main" src="./welcome.png">
-        </div>
-        <div class="open">
-            <input type="file" id="video-finder" style="display: none" accept="image/*" onchange="change.video()">
-        </div>
-    </div>
-    <div id="controls">
-        <div id="controls-auvid" style="display:none;">
-            <button id="slow-forward" onclick="SlowForward()">&#x23ea;</button>
-            <button id="play-pause">||</button>
-            <button id="fast-forward" onclick="FastForward()">&#9193</button>
-            <span id="videoTime" style="font-size: 22px;color: #eee">0:00/0:00</span>
-            <input type="range" id="videoPoint" value="0" min="0" onchange="ReTime()" onmousedown="removeBug1.startr()" onmouseup="removeBug1.leave()">
-            <button id="volume" style="color: Gold" onclick="ChangeVolume()">🔊</button>
-            <input type="range" id="volume-range" max="100" value="100" onchange="ApplyVolume()" onmouseup="DisShow()">
-            <div id="volume-value" style="display: none"><span class="arrow"></span>100%</div>
-        </div>
-        <div id="controls-img" style="display: block" class="div-img">
-            <a onclick="ShowMenu('filters','block')">Filters/Effects</a>
-            <a onclick="AvailableSoon()">Crop</a>
-            <a onclick="ShowMenu('rotate-popup','block')">Rotate</a>
-            <a onclick="ShowMenu('zoom-options','block')">Zoom Options</a>
-            <a onclick="AvailableSoon()">Convert to:</a>
-            <a onclick="Save()">Save</a>
-        </div>
-        <button class="moreIoptions" onclick="ShowMenu('more_options','grid')">⋮</button>
-        <div id="more_options">
-            <a onclick="more_options.Exit()">Exit</a>
-            <a onclick="more_options.Reload()">Restart</a><hr>
-            <a onclick="video.src = null">Close File</a><hr>
-            <a>Settings</a>
-            <a>Go To Folder</a>
-            <a id="FormatName">Format : "."</a><hr>
-            <a onclick="more_options.vifw()">View Image from Web</a><hr>
-            <a onclick="more_options.ViewImage()">View Image</a>
-            <a onclick="more_options.ListenAudio()">Listen Audio</a>
-            <a onclick="more_options.PlayVideo()">Watch Video</a><hr>
-            <a onclick="more_options.CloseMenu()">Close Menu</a>
-        </div>
-        <div id="img-menus">
-            <div id="filters" style="height: 240px;bottom: 38px">
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Blur-point</a>    
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Brightness</a><hr>
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Contrast</a>      
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Grayness</a><hr>  
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Hue-rotation</a>  
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Invert</a><hr>    
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Opacity</a>       
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Saturate</a><hr>  
-                <a onclick="filterOptions.showFilters(this.innerHTML)">Sepia</a>         
+    <div class="container">
+        <div id="mains">
+            <div id="show-container">
+                <video id="video-container" style="background-size: cover;display: none">
+                    <source id="vid-source">
+                </video>
+                <audio id="audio-container" style="display: none">
+                    <source id="aud-source">
+                </audio>
+                <div id="img-container">
+                    <img id="image-main" src="./welcome.png">
+                </div>
+                <div class="open">
+                    <input type="file" id="video-finder" style="display: none" accept="image/*" onchange="change.video()">
+                </div>
             </div>
-            <div id="zoom-options" style="text-align: center;bottom: 31px;height: 140px;left: 270px;width: 150px">
-                <a onclick="ZoomOptions.PixelToPixel()">Pixel to Pixel</a>
-                <a onclick="ZoomOptions.FitTheArea()">Fit the Area</a><hr style="width: 142px">
-                <a onclick="ZoomOptions.ZoomIn()">Zoom In</a>
-                <input type="number" max="1000" min="1" value="100" id="zoom" oninput="ZoomOptions.ZoomNum()"><span>%</span>
-                <a onclick="ZoomOptions.ZoomOut()">Zoom Out</a>
-            </div>
-            <div id="convert-types" style="width: 260px;left: 360px">
-                <a>.png (Portable Network Graphics)</a><hr style="width: 252px">
-                <a>.jpg (Standard Camera Image)</a><hr style="width: 252px">
-                <a>.pdf (Portable Document Format)</a><hr style="width: 252px">
-                <a>.ico (Icon Image)</a><hr style="width: 252px">
-                <a>.gif (Graphics Interface Format)</a><hr style="width: 252px">
-                <a>.bmp (Bitmap Image)</a><hr style="width: 252px">
-                <a>.webp (Web Picture)</a>
+            <div id="controls">
+                <div id="controls-auvid" style="display:none;">
+                    <button id="slow-forward" class="auvid-button" onclick="SlowForward()">&#x23ea;</button>
+                    <button id="play-pause" class="auvid-button">||</button>
+                    <button id="fast-forward" onclick="FastForward()" class="auvid-button">&#9193</button>
+                    <span id="videoTime" style="font-size: 22px;color: #eee">0:00/0:00</span>
+                    <input type="range" id="videoPoint" value="0" min="0" onchange="ReTime()" onmousedown="removeBug1.startr()" onmouseup="removeBug1.leave()">
+                    <button id="volume" style="color: Gold">🔊</button>
+                    <input type="range" id="volume-range" max="100" value="100" oninput="ApplyVolume()" onmouseup="VolumeDone()">
+                    <div id="volume-value">100%</div>
+                </div>
+                <div id="img-popups">
+                    <div id="filters-popup" style="width: 408px;display: none;">
+                        <h2 style="top: -15px;left: 5px;">Filters:</h2>
+                        <select id="filter-type" onchange="filterOptions.filterify()">
+                            <option>Blur-point</option>
+                            <option selected>Brightness</option>
+                            <option>Contrast</option>
+                            <option>Grayness</option>
+                            <option>Hue-rotation</option>
+                            <option>Invert</option>
+                            <option>Opacity</option>
+                            <option>Saturate</option>
+                            <option>Sepia</option>
+                        </select>
+                        <button id="filter-apply" onclick="filterOptions.ApplyFilter()">Apply</button>
+                        <h2 style="top:25px;left: 5px;">Strength:</h2>
+                        <input type="range" id="filter-strength" onchange="filterOptions.filterP(1)"  min="0" max="1000" value="100">
+                        <input type="number" id="filter-power" min="0" max="1000" value="100" oninput="filterOptions.filterP(2)"><span id='fpp'>%</span>
+                    </div>
+                    <div id="rotate-popup" style="width: 408px;display: none;">
+                        <h2 style="left: 5px;width: calc(100% - 5px);text-align: center;">Rotation:</h2>
+                        <a style="margin-left: 14%;" onclick="rotateOptions.RotateSuggest(90)">90deg</a>
+                        <a onclick="rotateOptions.RotateSuggest(180)">180deg</a>
+                        <a onclick="rotateOptions.RotateSuggest(270)">270deg</a>
+                        <a onclick="rotateOptions.RotateSuggest(360)">Normal</a>
+                        <input type="number" placeholder="Enter rotation in degree" min="0" max="360" id="rot-deg" onkeydown="FixBug4()">
+                        <button onclick="rotateOptions.Rotate()">Rotate</button>
+                    </div>
+                    <div id="img-url-popup" style="display: none">
+                        <h3 style="width: 400px;text-align: center">Enter Web URL or 'data:' for Images</h3>
+                        <input type="text" id="popup" style="width: 350px;cursor: text">
+                        <button onclick="ViewWebImg()">Go</button>
+                    </div>
+                </div>
+                <div class="alert info">
+                    <span class="closebtn" onclick="CloseMessage()">&times;</span>Welcome User.
+                </div>
             </div>
         </div>
-        <div id="img-popups">
-            <div id="filters-popup" style="width: 408px;display: none;">
-                <h2 style="top: -15px;left: 5px;">Filters:</h2>
-                <select id="filter-type" onchange="filterOptions.filterify()">
-                    <option>Blur-point</option>
-                    <option selected>Brightness</option>
-                    <option>Contrast</option>
-                    <option>Grayness</option>
-                    <option>Hue-rotation</option>
-                    <option>Invert</option>
-                    <option>Opacity</option>
-                    <option>Saturate</option>
-                    <option>Sepia</option>
-                </select>
-                <button id="filter-apply" onclick="filterOptions.ApplyFilter()">Apply</button>
-                <h2 style="top:25px;left: 5px;">Strength:</h2>
-                <input type="range" id="filter-strength" onchange="filterOptions.filterP(1)"  min="0" max="1000" value="100">
-                <input type="number" id="filter-power" min="0" max="1000" value="100" oninput="filterOptions.filterP(2)"><span id='fpp'>%</span>
+        <div class="header">
+            <div class="header-buttons">
+                <button onclick="DisplayMenu('file')">File</button>
+                <button onclick="DisplayMenu('filters')" id="header_filter_but">Filters</button>
+                <button onclick="DisplayMenu('tools')" id="header_tools_but">Tools</button>
+                <button onclick="DisplayMenu('help')">Help</button>
             </div>
-            <div id="rotate-popup" style="width: 408px;display: none;">
-                <h2 style="left: 5px;width: calc(100% - 5px);text-align: center;">Rotation:</h2>
-                <a style="margin-left: 14%;" onclick="rotateOptions.RotateSuggest(90)">90deg</a>
-                <a onclick="rotateOptions.RotateSuggest(180)">180deg</a>
-                <a onclick="rotateOptions.RotateSuggest(270)">270deg</a>
-                <a onclick="rotateOptions.RotateSuggest(360)">Normal</a>
-                <input type="number" placeholder="Enter rotation in degree" min="0" max="360" id="rot-deg" onkeydown="FixBug4()">
-                <button onclick="rotateOptions.Rotate()">Rotate</button>
+            <div class="header_menu" id="file-menu">
+                <div class="header-sub-menu" onclick="DisplaySubMenu('open')">
+                    <div class="name">Open</div><span class="submenu-symbol">▶</span>
+                </div>
+                <div class="sub_menu" name="pos1" id="open-sub-menu">
+                    <div class="header-sub-menu-button" onclick="File_options.open_Options.ViewImage()">
+                        <div class="name">Image</div>
+                        <div class="short-key">Shift + O</div>
+                    </div>
+                    <div class="header-sub-menu-button" onclick="File_options.open_Options.ListenAudio()">
+                        <div class="name">Audio</div>
+                        <div class="short-key"></div>
+                    </div>
+                    <div class="header-sub-menu-button" onclick="File_options.open_Options.PlayVideo()">
+                        <div class="name">Video</div>
+                        <div class="short-key">Alt + O</div>
+                    </div>
+                </div>
+                <div class="header-sub-menu" onclick="DisplaySubMenu('capture')">
+                    <div class="name">Capture</div><span class="submenu-symbol">▶</span>
+                </div><hr>
+                <div class="sub_menu" style="top: 25px;" id="capture-sub-menu">
+                    <div class="header-sub-menu-button">
+                        <div class="name" onclick="File_options.CaptureOptions.TakeImage()">Take Photo</div>
+                    </div>
+                </div>
+                <div class="header-menu-button">
+                    <div class="name">Save</div>
+                    <div class="short-key">Ctrl + S</div>
+                </div><hr>
+                <div class="header-menu-button" onclick="File_options.Reload()">
+                    <div class="name">Reload </div>
+                    <div class="short-key">Ctrl + R</div>
+                </div>                
+                <div class="header-menu-button" onclick="File_options.Exit()">
+                    <div class="name">Exit</div>
+                    <div class="short-key">Ctrl + W</div>
+                </div>
             </div>
-            <div id="img-url-popup" style="display: none">
-                <h3 style="width: 400px;text-align: center">Enter Web URL or 'data:' for Images</h3>
-                <input type="text" id="popup" style="width: 350px;cursor: text">
-                <button onclick="ViewWebImg()">Go</button>
+            <div id="header_img">
+                <div class="header_menu" id="filters-menu" style="left: 60px;">
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Brightness</div></div>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Contrast</div></div><hr>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Sepia</div></div>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Saturation</div></div><hr>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Inversion</div></div>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Hue-rotation</div></div><hr>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Blurness</div></div><hr>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Grayscale</div></div>
+                    <div class="header-menu-button" onclick="CreateFiltersPopup()"><div class="name">Opacity</div></div>
+                </div>
+                <div class="header_menu" id="tools-menu" style="left: 120px;">
+                    <div class="header-menu-button" onclick="Tools_popups.ZoomPopup()">
+                        <div class="name">Zoom</div>
+                        <div class="short-key">Alt + Z</div>
+                    </div>
+                    <div class="header-menu-button" onclick="Tools_popups.RotatePopup()">
+                        <div class="name">Rotate</div>
+                        <div class="short-key">Alt + R</div>
+                    </div><hr>
+                    <div class="header-menu-button" onclick="Tools_options.File_details()">
+                        <div class="name">File details</div>
+                        <div class="short-key"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_menu" id="help-menu" style="left: 180px;">
+                <div class="header-menu-button" onclick="Help_options.Documentation()">
+                        <div class="name">Documentation</div>
+                        <div class="short-key">Alt + D</div>
+                </div>
+                <div class="header-menu-button" onclick="ShowSoftwareInfo()">
+                    <div class="name">Software Information</div>
+                    <div class="short-key"></div>
+                </div><hr>
+                <div class="header-menu-button" onclick="Help_options.AboutUs()">
+                    <div class="name">About Us</div>
+                    <div class="short-key">Alt + A</div>
+                </div>
+                <div class="header-menu-button" onclick="Help_options.AIhelp()">
+                    <div class="name">AI Help</div>
+                    <div class="short-key">Alt + H</div>
+                </div>
+
             </div>
         </div>
-    </div>
-    <div class="alert info">
-        <span class="closebtn" onclick="CloseMessage()">&times;</span>Welcome User.
+        <div id="popups">
+
+        </div>
     </div>
 </body>
 <div id="scripts">
-    <script src="js/libs/jquery.min.js"></script>
-    <script src="js/libs/cybex-web2exe.js"></script>
-    <script src="js/libs/saveSvgAsPng.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/more-options.js"></script>
-    <script src="js/auvid.js"></script>
-    <script src="js/image.js"></script>
-    <script src="js/keyboard-shortcuts.js"></script>
+    <div id="libs">
+        <script src="js/libs/jquery.min.js"></script>
+        <script src="js/libs/cybex-web2exe.js"></script>
+    </div>
+    <div id="core">
+        <script src="js/index.js"></script>
+        <script src="js/more-options.js"></script>
+        <script src="js/auvid.js"></script>
+        <script src="js/image.js"></script>
+        <script src="js/popup.js"></script>
+        <script src="js/header.js"></script>
+        <script src="js/keyboard-shortcuts.js"></script>
+    </div>
 </div>
 </html>

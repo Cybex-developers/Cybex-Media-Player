@@ -1,57 +1,4 @@
-function ShowMenu(id,type){
-    let elem  = document.getElementById(id);
-    if(getComputedStyle(elem).display === "none"){
-        document.getElementById("zoom-options").style.display = "none"
-        document.getElementById("more_options").style.display = "none"
-        document.getElementById("filters").style.display = "none"
-        document.getElementById("convert-types").style.display = "none"
-        elem.style.display = type;
-        setTimeout(function () {
-            elem.style.display = "none";
-        },5000)
-    }
-    else{
-        elem.style.display = "none";
-    }
-}
 let imgtag = document.getElementById("image-main")
-function FixBug3() {
-    let zoomp = document.getElementById('zoom')
-    if(zoomp.value > 1000){zoomp.value = 1000}
-    if(zoomp.value < 1){zoomp.value = 1}
-}
-var ZoomOptions = {
-    PixelToPixel : function () {
-        imgtag.style.width = "auto";imgtag.style.height = "auto";imgtag.style.zoom = 1
-        imgtag.style.zoom = 1;FixBug3()
-        document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
-    },
-    FitTheArea : function () {
-        if(ImgWidth >= ImgHeight){
-            imgtag.style.width = "100%";imgtag.style.height = 'auto';imgtag.style.zoom = 1
-            document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
-        }
-        else{
-            imgtag.style.height = "100%";imgtag.style.width = 'auto';imgtag.style.zoom = 1
-            document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100
-        }
-    },
-    ZoomIn : function () {
-        imgtag.style.width = "auto";imgtag.style.height = "auto";
-        imgtag.style.zoom = getComputedStyle(imgtag).zoom * 1.25;
-        document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100;FixBug3()
-    },
-    ZoomOut : function () {
-        imgtag.style.width = "auto";imgtag.style.height = "auto";
-        imgtag.style.zoom = getComputedStyle(imgtag).zoom / 1.25;
-        document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100;FixBug3()
-    },
-    ZoomNum : function () {
-        imgtag.style.width = "auto";imgtag.style.height = "auto";
-        imgtag.style.zoom = document.getElementById('zoom').value / 100;
-        document.getElementById('zoom').value = getComputedStyle(imgtag).zoom * 100;;FixBug3()
-    }
-}
 function AvailableSoon() {
     messageBox.style.display = "block"
     messageBox.innerHTML = "<span class='closebtn' onclick='CloseMessage()'>&times;</span>Available Soon!";
@@ -123,22 +70,14 @@ var rotateOptions = {
     }
 }
 function Save() {
-    const opts = {
-        types: [{
-          description: 'Image file',
-          accept: {'images/*': ['.png','.svg','.jpg']},
-        }],
-      };
-    const fileHandle = window.showSaveFilePicker(opts);
-    setTimeout(() => {
-        const writable = fileHandle.createWritable();
-        setTimeout(() => {
-            writable.write("Hello World");
-            setTimeout(() => {
-                writable.close();
-            }, 10);
-        }, 10);
-    }, 10);
+    var a = $("<a>")
+    .attr("href", "./welcome.png")
+    .attr("download", "img.png")
+    .appendTo("body");
+
+    a[0].click();
+
+    a.remove();
 }
 function FixBug4() {
     let val = document.getElementById('rot-deg').value

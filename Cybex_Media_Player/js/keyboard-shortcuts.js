@@ -1,12 +1,9 @@
 document.addEventListener('keyup',function(e) {
-    /*if (e.which != null){
-        console.log(e.which);
-    }*/
     if (e.ctrlKey && e.which == 82) {
         more_options.Reload()
     }
     else if (e.ctrlKey && e.which == 87) {
-        more_options.Exit()
+        CreateCancelPopup()
     }
     else if (e.ctrlKey && e.which == 79) {
         more_options.PlayVideo()
@@ -56,17 +53,39 @@ document.addEventListener('keyup',function(e) {
         }
         else if(document.getElementById('video-finder').accept == "video/mp4,video/webm,video/ogg"){
             volumeRange.value = (parseInt( volumeRange.value) + 1).toString();ApplyVolume()
-            console.log(typeof(volumeRange.value));
         }
     }
     else if(e.which == 40){
         if(document.getElementById('video-finder').accept == "audio/mp3,audio/wav,audio/ogg"){
             volumeRange.value = (parseInt( volumeRange.value) + 1).toString();ApplyVolume();
-            console.log(typeof(volumeRange.value));
         }
         else if(document.getElementById('video-finder').accept == "video/mp4,video/webm,video/ogg"){
             volumeRange.value = (parseInt( volumeRange.value) + 1).toString();ApplyVolume()
-            console.log(typeof(volumeRange.value));
         }
+    }
+    else if(e.altKey && e.which == 90){
+        if(document.getElementById('video-finder').accept == "image/*"){
+            Tools_popups.ZoomPopup()
+        }
+    }
+    else if(e.altKey && e.which == 82){
+        if(document.getElementById('video-finder').accept == "image/*"){
+            Tools_popups.RotatePopup()
+        }
+    }
+    else if(e.altKey && e.which == 68){
+        Help_options.Documentation()
+    }
+    else if(e.altKey && e.which == 65){
+        Help_options.AboutUs()
+    }
+    else if(e.altKey && e.which == 72){
+        Help_options.AIhelp()
+    }
+    else if(e.shiftKey && e.which == 79){
+        File_options.open_Options.ViewImage()
+    }
+    else if(e.altKey && e.which == 79){
+        File_options.open_Options.PlayVideo()
     }
 })

@@ -73,31 +73,18 @@ function SlowForward() {
 function CloseMessage() {
     messageBox.style.display = "none";
 }
-function ChangeVolume() {
-    if (getComputedStyle(volumeRange).display === "none") {
-        volumeRange.style.display = "block";
-        document.getElementById("volume-value").style.display = "block"
-    } else {
-        volumeRange.style.display = "none";
-        document.getElementById("volume-value").style.display = "none"
-    }
-}
 function ApplyVolume() {
     video.volume = volumeRange.value / 100;
     let tex;
     if (volumeRange.value == 100) {
         tex = "<span class=\"arrow\"></span>100%"
     } else if (volumeRange.value < 100 && volumeRange.value >= 10) {
-        tex = "<span class=\"arrow\"></span>0" + volumeRange.value.toString() + "%"
+        tex = "<span class=\"arrow\"></span>" + volumeRange.value.toString() + "%"
     } else if (volumeRange.value < 10) {
-        tex = "<span class=\"arrow\"></span>00" + volumeRange.value.toString() + "%"
+        tex = "<span class=\"arrow\"></span>" + volumeRange.value.toString() + "%"
     }
+    document.getElementById("volume-value").style.display = "block";
     document.getElementById("volume-value").innerHTML = tex;
-    document.getElementById("volume-value").style.bottom = (parseFloat(volumeRange.value) * 1.5 + 15) + "px";
-}ApplyVolume()
-function DisShow() {
-    setTimeout(function () {
-        volumeRange.style.display = "none";
-        document.getElementById("volume-value").style.display = "none"
-    }, 500)
+    document.getElementById("volume-value").style.left = ((parseFloat(volumeRange.value) / 2) + 535) + "px";
 }
+function VolumeDone(){document.getElementById("volume-value").style.display = "none";}
