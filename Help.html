@@ -47,143 +47,76 @@
         }
         .container{
             position: absolute;
-            top: 7%;
-            left: 0%;
-            height: 93%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .chat{
-            width: calc(100% - 40px);
-            height: 98%;
+            top: 8%;
+            height: 91%;
+            width: 98%;
             border-radius: 5px;
-            display: block;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            text-align: center;
+            left: 1%;
             box-shadow: 0 0 10px Gold;
-            background: #eee;
         }
-        .cms{
-            width: 94%;
-            position: relative;
-            left: 20px;
+        .sideMenu{
+            position: absolute;
+            height: 100%;
+            width: 210px;
+            background: #222;
+            border-right: solid 2px Black;
+            color: White;
+            text-align: center;
+            font-family: Arial;
+            border-radius: 5px 0 0 5px;
             font-size: 18px;
-            outline: none;
-            padding: 5px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border: none;
-            text-align: left;
-            border-radius: 10px;
-            background: White;
+            max-width: 100%;
         }
-        .cms-container{
-            width: 100%;
-            position: relative;
-            top: calc(100% - 50px);
+        .sideMenu p{
             text-align: left;
-            padding-top: 10px;
-            height: max-content;
-            padding-bottom: 10px;
-            background: mediumaquamarine;
-        }
-        .chat-container{
-            position: relative;
-            top: -51px;
-            width: 100%;
-            color: #111;
-            font-family: Helvetica;
-            font-size: 18px;
-            height: calc(100% - 49px);
-            overflow-y: scroll;
-        }
-        .chat-container::-webkit-scrollbar{-webkit-appearance: none;width: 15px;}
-        .chat-container::-webkit-scrollbar-thumb{background: #ddd;cursor: pointer;}
-        .chat-container::-webkit-scrollbar-thumb:hover{background: #ccc;}
-        .chat-container::-webkit-scrollbar-thumb:active{background: #bbb;}
-
-        .chat .sended_text{            
-            background: #ffd70088;
-            padding: 10px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            border-radius: 0px 20px 20px 20px;
-            border-left: solid 2px Gray;
-            width: max-content;
-            margin-top: 10px;
-            margin-left: 30px;
-            position:relative;
-            max-width: 1000px;
-            padding:30px; 
-            padding-top: 5px;
-            padding-bottom: 5px;
-            text-align: left;
+            padding-left: 25px;
+            cursor: pointer;
+            margin: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background: #222;
             margin-bottom: 5px;
         }
-        .chat input[type="radio"]{
-            margin-left: 20px;
+        .sideMenu p:hover{background: #111;}
+        .sideMenu p:active{background: #000;}
+        .sideMenu .choosen{
+            text-align: left;
+            border-left: solid 10px #0f8;
+            padding-left: 15px;
             cursor: pointer;
-            -webkit-appearance: none;
-            height: 20px;
-            width: 20px;
-            background: transparent;
-            margin-right: 10px;
-            outline: none;
-            border-radius: 50%;
-            border: 2px solid #ddd;
-            transition: 0.5s;
+            margin: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background: #000;
+            margin-bottom: 5px;
         }
-        .chat input[type="radio"]:hover{border: 2px solid #fff;}
-        .chat input[type="radio"]:checked {
-            background: #0f8;
-            border: 3px solid #fff;
-        }
-        .chat label{
-            cursor: pointer;
-            position: relative;
-            top: -3px;
-        }
-        
-        .chat .recieved_text{            
-            background: #93ffae;
-            padding: 10px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            border-radius: 20px 0 20px 20px;
-            border-right: solid 2px Gray;
-            width: max-content;
-            margin-top: 10px;
-            margin-right: 30px;
+        .sideMenu .choosen:hover{background: #111;}
+        .chat{
             position: absolute;
-            padding:30px; 
-            left: 200px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            direction: rtl;
-            display: flex;
-            flex-direction: row-reverse;
-        }
-        .send_button{
-            position: relative;
-            border: none;
-            outline: none;
-            background: #0f8;
-            border-radius: 5px;
-            padding: 20px;
-            transition: 0.5s;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            cursor: pointer;
-            margin: 10px;
+            height: 100%;
+            left: 205px;
+            width: calc(100% - 255px);
+            background: #eee;
+            color: White;
+            padding-left: 50px;
+            color: #111;
+            text-align: left;
+            font-family: Arial;
+            border-radius: 0 5px 5px 0 ;
             font-size: 18px;
+            font-family: Franklin Gothic;
+            overflow: scroll;
+            font-weight: 300;
         }
-        .send_button:hover{box-shadow: 0 0 5px #fff;}
-        .send_button:active{box-shadow: 0 0 10px #fff;}
+        .chat::-webkit-scrollbar{-webkit-appearance: none;width: 15px;}
+        .chat::-webkit-scrollbar-corner{-webkit-appearance: none;}
+        .chat::-webkit-scrollbar-thumb{
+            -webkit-appearance: none;
+            border-radius: 25px;
+            background: #ccc;
+        }
+        .chat::-webkit-scrollbar-thumb:hover{background: #bbb;}
+        .chat::-webkit-scrollbar-thumb:active{background: #aaa;}
     </style>
 </head>
 <body>
@@ -196,13 +129,18 @@
         <button id="Help" onclick="GoHelpPage()">Help</button>
     </div>
     <div class="container">
-        <div class="chat">
-            <div class="cms-container" id="cms-container">
-                <input type="text" id="cms" class="cms">
-            </div>
-            <div class="chat-container" id="chat-container">
-            </div>
+        <div class="sideMenu">
+            <br><br>
+            <p class="choosen">All</p>
+            <p>Installing</p>
+            <p>Launching</p>
+            <p>Image Viewer</p>
+            <p>Audio Listener</p>
+            <p>Video Player</p>
+            <p>Licenses</p>
+            <p>Other</p>
         </div>
+        <div class="chat" id="chat-container"></div>
     </div>
 </body>
 <script>
@@ -224,44 +162,22 @@
         }
     }
     var Bot =  {
-        send : {
-            text : function(text) {
-                let cont = document.getElementById('chat-container');
-                let elem = document.createElement('div');
-                elem.className = 'sended_text';
-                elem.innerHTML = text.replace(/\n/g,"<br>");
-                cont.appendChild(elem)
-            }
+        send : function(text) {
+            let cont = document.getElementById('chat-container');
+            let elem = document.createElement('div');
+            elem.className = 'sended_text';
+            elem.innerHTML = text.replace(/\n/g,"<br>");
+            cont.appendChild(elem)
         },
-        ask : {
-            mcq : function (text,options) {
-                let cont = document.getElementById('chat-container');
-                let elem = document.createElement('div');
-                elem.className = 'sended_text';
-                for (let i = 0; i < options.length; i++) {
-                    text = text.replace("<option>",
-                    `<input type="radio" id="`+options[i]+`" name="`+name+`"><label for="`+options[i] + `">`+options[i]+`</label>`) 
-                }
-                text = text.replace("<send>","<button class='send_button' onclick='SendReply(" + name.toString() + ")'>Send</button>")
-                elem.innerHTML = text.replace(/\n/g,"<br>");
-                cont.appendChild(elem)
-                name = "mcq"+num.toString();
-            }
-        },
-        recieve : {
-            text : function(text) {
-                let cont = document.getElementById('chat-container');
-                let elem = document.createElement('div');
-                elem.className = 'recieved_text';
-                elem.innerHTML = text.replace(/\n/g,"<br>");
-                cont.appendChild(elem)
-            }
-
+        recieve : function(text) {
+            let cont = document.getElementById('chat-container');
+            let elem = document.createElement('div');
+            elem.className = 'recieved_text';
+            elem.innerHTML = text.replace(/\n/g,"<br>");
+            cont.appendChild(elem)
         }
     }
-    Bot.send.text("Welcome to Cybex Media Player help.")
-    Bot.ask.mcq("Select what type of help do you want: \n<option>\n<option>\n<option>\n<option>\n<send>",["Installation","Launching","Features","Others"])
-    
+    Bot.send("Hello")
 </script>
 <style>
     @media screen and (min-width:1920px){
