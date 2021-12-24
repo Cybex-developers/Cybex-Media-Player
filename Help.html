@@ -117,6 +117,76 @@
         }
         .chat::-webkit-scrollbar-thumb:hover{background: #bbb;}
         .chat::-webkit-scrollbar-thumb:active{background: #aaa;}
+        .sended_text{
+            background: #0f8;
+            width: fit-content;
+            padding: 0.5vh;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            margin-top: 1vh;
+            border-radius: 0 2vh 2vh 2vh;
+        }
+        .sended_text::after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 24px 20px 0 20px;
+            border-color: #0f8 transparent transparent transparent;
+            position: absolute;
+            margin-top: -3px;
+            margin-left: -75px;
+        }
+        .chat-int-outer{
+            position: absolute;
+            left: 205px;
+            bottom: 0px;
+            z-index: 10;
+            background: aquamarine;
+            width: 1133px;
+            height: 30px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: none;
+            text-align: center;
+        }
+        .chat-int-outer * {display: inline-block;}
+        .chat-int-outer .chat-input{
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            width: 1000px;
+            padding: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 17px;
+            position: relative;
+            top: -5px;
+        }
+        .chat-int-outer .chat-input:focus{
+            padding: 3px;
+            padding-left: 13px;
+            padding-right: 13px;
+            border: 2px solid #08f;
+        }
+        .control{
+            height: 18px;
+            width: 18px;
+            padding: 7px;
+            background: White;
+            font-family: Arial;
+            color: Black;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-left: 5px;
+            position: relative;
+            top: -1px;
+            user-select: none;
+        }
+        .control:hover{background: #ddd;}
+        .control:active{padding: 5px;border: 2px solid #08f;}
+        .control img{width: 18px;}
     </style>
 </head>
 <body>
@@ -140,7 +210,13 @@
             <p>Licenses</p>
             <p>Other</p>
         </div>
-        <div class="chat" id="chat-container"></div>
+        <div class="chat" id="chat-container">
+        </div>
+        <div class="chat-int-outer">
+            <div class="control"><img src="./images/mic.png"></div>
+            <input type="input" class="chat-input"></input>
+            <div class="control"><img src="./images/send.png"></div>
+        </div>
     </div>
 </body>
 <script>
