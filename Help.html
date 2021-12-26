@@ -233,14 +233,7 @@
     <div class="container">
         <div class="sideMenu">
             <br><br>
-            <p class="choosen">All</p>
-            <p>Installing</p>
-            <p>Launching</p>
-            <p>Image Viewer</p>
-            <p>Audio Listener</p>
-            <p>Video Player</p>
-            <p>Licenses</p>
-            <p>Other</p>
+            <p class="choosen">Main Bot</p>
         </div>
         <div class="chat" id="chat-container"><br></div>
         <div class="chat-int-outer">
@@ -359,7 +352,6 @@
             else if(recievedText == "".toUpperCase()){
                 Bot.send("")
             }
-
             else {
                 Bot.send("Did you mean "+ recievedText +"?")
             }
