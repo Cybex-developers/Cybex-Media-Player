@@ -93,7 +93,7 @@
         .sideMenu .choosen:hover{background: #111;}
         .chat{
             position: absolute;
-            height: 100%;
+            height: 560px;
             left: 205px;
             width: calc(100% - 255px);
             background: #eee;
@@ -102,7 +102,7 @@
             color: #111;
             text-align: left;
             font-family: Arial;
-            border-radius: 0 5px 5px 0 ;
+            border-radius: 0 5px 0 0 ;
             font-size: 18px;
             font-family: Franklin Gothic;
             overflow: scroll;
@@ -118,25 +118,56 @@
         .chat::-webkit-scrollbar-thumb:hover{background: #bbb;}
         .chat::-webkit-scrollbar-thumb:active{background: #aaa;}
         .sended_text{
-            background: #0f8;
+            background: #80f;
             width: fit-content;
+            max-width: 400px;
             padding: 0.5vh;
             padding-left: 2vw;
             padding-right: 2vw;
-            margin-top: 1vh;
-            border-radius: 0 2vh 2vh 2vh;
+            top: 1vh;
+            margin-bottom: 1vh;
+            border-radius: 2vh;
+            color: #eee;
+            max-width: 400px;
         }
-        .sended_text::after{
+        .sended_text::selection{background: brown;}
+        .sended_text .arrow{
             content: "";
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 24px 20px 0 20px;
-            border-color: #0f8 transparent transparent transparent;
+            border-width: 12px 10px 0 10px;
+            border-color: #80f transparent transparent transparent;
             position: absolute;
             margin-top: -3px;
-            margin-left: -75px;
+            left: 41px;
         }
+        .recieved_text{
+            background: #08f;
+            max-width: 400px;
+            width: fit-content;
+            color: #eee;
+            padding: 0.5vh;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            position: relative;
+            right: -500px;
+            top: 1vh;
+            margin-bottom: 1vh;
+            border-radius: 2vh;
+        }
+        .recieved_text .arrow{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12px 10px 0 10px;
+            border-color: #08f transparent transparent transparent;
+            position: absolute;
+            margin-top: -4px;
+            right: -9px;
+        }
+        .recieved_text::selection{background: brown;}
         .chat-int-outer{
             position: absolute;
             left: 205px;
@@ -179,10 +210,10 @@
             border-radius: 15px;
             cursor: pointer;
             margin-right: 5px;
-            margin-left: 5px;
             position: relative;
             top: -1px;
             user-select: none;
+            margin-left: 0;
         }
         .control:hover{background: #ddd;}
         .control:active{padding: 5px;border: 2px solid #08f;}
@@ -210,12 +241,11 @@
             <p>Licenses</p>
             <p>Other</p>
         </div>
-        <div class="chat" id="chat-container">
-        </div>
+        <div class="chat" id="chat-container"><br></div>
         <div class="chat-int-outer">
-            <div class="control"><img src="./images/mic.png"></div>
-            <input type="input" class="chat-input"></input>
-            <div class="control"><img src="./images/send.png"></div>
+            <div class="control" title="Speak and Type"><img src="./images/mic.png"></div>
+            <input type="input" class="chat-input" id="chat-input" placeholder="Ask Something..."></input>
+            <div class="control" title="send" id="send-button" onclick="Sendiy()"><img src="./images/send.png"></div>
         </div>
     </div>
 </body>
@@ -225,16 +255,117 @@
     function GoDownload(){window.location.href = "./Downloads";}
     function GoAboutPage(){window.location.href = "./AboutUs";}
     function ReadDocs(){window.location.href = "./Docs";}
-    let num = 0;let name = "mcq"+num.toString();
-    function SendReply(namia) {
-        var getSelectedValue = document.querySelector( 'input[name="mcq0"]:checked');   
-        if(getSelectedValue != null) {   
-            document.write("Radio button is selected");  
-            console.log(getSelectedValue.id);
+    var input = document.getElementById("chat-input");
+
+    function Sendi() {
+        Bot.recieve(input.value)
+        input.value = ""
+    }
+    input.addEventListener("keydown", function (e) {
+        if (e.which == 13) {
+            Sendi()
         }
-        else {  
-            Bot.send.text("Please assign a value first.")
-            Bot.ask.mcq("Select what type of help do you want: \n<option>\n<option>\n<option>\n<option>\n<send>",["Installation","Launching","Features","Others"])
+    })
+    function SendReply(recievedText) {
+        if (recievedText) {
+            recievedText = recievedText.toUpperCase()
+            if (recievedText == "How to install cybex media player".toUpperCase() || recievedText == "How to install it".toUpperCase()) {
+                Bot.send("Here are the steps to install it:- \n 1. Download it \n 2. Run it \n 3. Install it")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+           else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+            else if(recievedText == "".toUpperCase()){
+                Bot.send("")
+            }
+
+            else {
+                Bot.send("Did you mean "+ recievedText +"?")
+            }
+        }
+        else{
+            Bot.send("Please ask something.")
         }
     }
     var Bot =  {
@@ -242,18 +373,21 @@
             let cont = document.getElementById('chat-container');
             let elem = document.createElement('div');
             elem.className = 'sended_text';
-            elem.innerHTML = text.replace(/\n/g,"<br>");
+            elem.innerHTML = "<div class='arrow'></div>" + text.replace(/\n/g,"<br>") ;
             cont.appendChild(elem)
         },
         recieve : function(text) {
             let cont = document.getElementById('chat-container');
             let elem = document.createElement('div');
             elem.className = 'recieved_text';
-            elem.innerHTML = text.replace(/\n/g,"<br>");
+            elem.innerHTML = "<div class='arrow'></div>" + text.replace(/\n/g,"<br>");
             cont.appendChild(elem)
+            setTimeout(() => {
+                SendReply(elem.innerText)
+            }, 10);
         }
     }
-    Bot.send("Hello")
+    Bot.send(" Welcome, myself Cybot. How can I help you ? ")
 </script>
 <style>
     @media screen and (min-width:1920px){
