@@ -261,11 +261,29 @@
     })
     function SendReply(recievedText) {
         if (recievedText) {
-            let questions = ["How to install cybex media player"]
-            
             recievedText = recievedText.toUpperCase()
+
+            let questions = ["How to install cybex media player"]
+            let answers = ["Steps to install cybex media player are given below: \n 1. Download the installer \n 2. Run the Installer \n 3. Install it"]
+            
+            function compare(utterancesArray, answersArray, string) {
+                let item;
+                for (let x = 0; x < utterancesArray.length; x++) {
+                    for (let y = 0; y < utterancesArray[x].length; y++) {
+                    if (utterancesArray[x][y] === string) {
+                            let items = answersArray[x];
+                            item = items[Math.floor(Math.random() * items.length)];
+                        }
+                    }
+                }
+                return item;
+            }
+            
             if(recievedText == null || recievedText == "") {
                 Bot.send("Did you mean "+ recievedText +"?")
+            }
+            else{
+                Bot.send(compare(questions,answers,recievedText))
             }
         }
         else{
