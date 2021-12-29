@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://cybex-developers.github.io/Cybex-Media-Player/</loc>
+		<image:loc>https://cybex-developers.github.io/Cybex-Media-Player/favicon.png</image:loc>
+		<image:loc>https://cybex-developers.github.io/Cybex-Media-Player/images/snapshot.png</image:loc>
 	</url>
 
 	<url>
