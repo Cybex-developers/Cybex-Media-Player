@@ -1,6 +1,8 @@
 body,html{
     overflow: hidden;
     font-family: Arial;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 .header{
     position: fixed;
