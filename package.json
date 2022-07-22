@@ -1,0 +1,8 @@
+{
+    "name": "cybex-media-player",
+    "author": "Cybex Studios",
+    "dependecies": {},
+    "dependencies": {
+        "cybex-web2exe": "^2022.3.7"
+    }
+}
